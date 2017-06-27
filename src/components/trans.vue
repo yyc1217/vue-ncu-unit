@@ -12,9 +12,9 @@
 */
 
 import _ from 'lodash'
-import degrees from './data/degrees'
-import colleges from './data/colleges'
-import departments from './data/departments'
+import degrees from '../data/degrees'
+import colleges from '../data/colleges'
+import departments from '../data/departments'
 
 export default {
 

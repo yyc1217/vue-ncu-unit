@@ -12,8 +12,8 @@
 
 <script>
 
-import degrees from './data/degrees'
-import departments from './data/departments'
+import degrees from '../data/degrees'
+import departments from '../data/departments'
 import bus from './event-bus'
 
 export default {

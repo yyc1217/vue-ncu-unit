@@ -12,7 +12,7 @@
 
 <script>
 
-import degrees from './data/degrees'
+import degrees from '../data/degrees'
 import bus from './event-bus'
 
 export default {

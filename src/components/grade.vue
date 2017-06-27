@@ -1,8 +1,10 @@
 <template>
 
-<select v-model="study_year">
+<select v-model="grade">
 
-    <option v-for="n in years" v-bind:value="n">{{ n }}</option>
+    <option v-for="n in years"
+            v-bind:value="n"
+            v-bind:key="'grade' + n">{{ n }}</option>
 
 </select>
 
@@ -10,7 +12,7 @@
 
 <script>
 
-import degrees from './data/degrees'
+import degrees from '../data/degrees'
 import bus from './event-bus'
 
 export default {
@@ -22,7 +24,7 @@ export default {
 
     data () {
         return {
-            study_year: this.defaults,
+            grade: this.defaults,
             degree_id : this.degree
         }
     },

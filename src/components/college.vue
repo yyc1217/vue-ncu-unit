@@ -12,7 +12,7 @@
 
 <script>
 
-import colleges from './data/colleges'
+import colleges from '../data/colleges'
 import bus from './event-bus'
 
 export default {
