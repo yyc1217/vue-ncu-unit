@@ -1,11 +1,13 @@
 import Vue from 'vue'
-export default new Vue()
-
 import 'babel-polyfill'
 import { Enum } from 'enumify'
+
+export default new Vue()
+
 class Event extends Enum {}
 Event.initEnum([
-  'changeCollege'
+  'changeCollege',
+  'changeDegree'
 ])
 
 export const events = Event

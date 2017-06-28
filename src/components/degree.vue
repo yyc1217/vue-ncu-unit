@@ -1,6 +1,7 @@
 <template>
 
-<select v-model="selected">
+<select v-model="selected"
+        v-on:change="emitChange">
 
     <option v-for="degree in degrees" v-bind:data-study_year="degree.study_year"
                                       v-bind:value="degree.id"
@@ -13,12 +14,17 @@
 <script>
 
 import degrees from '../data/degrees'
-import bus from './event-bus'
+import bus, { events } from './event-bus'
+import mixin from './mixin'
 
 export default {
 
     props : [
         'defaults'
+    ],
+
+    mixins : [
+        mixin
     ],
 
     data () {
@@ -28,11 +34,11 @@ export default {
         }
     },
 
-    watch: {
-        selected (newValue) {
-            bus.$emit('change:degree', {
+    methods: {
+        emitChange () {
+            bus.$emit(events.changeDegree.name, {
                 degree: this.selected
-            });
+            })
         }
     }
 }

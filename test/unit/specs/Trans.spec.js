@@ -1,4 +1,4 @@
-import common from './common'
+import { getComponent } from './common'
 import component from '@/components/trans.vue'
 import { names, prefixing, fallback } from '@/data/locales'
 
@@ -14,7 +14,7 @@ let test = (type, locale) => {
   let datas = require(`@/data/${type}s`)
   let data = datas[0]
 
-  const c = common.getComponent(component, {
+  const c = getComponent(component, {
     type,
     transId: data.id,
     locale

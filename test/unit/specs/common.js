@@ -1,19 +1,51 @@
 import 'should'
 import { mount } from 'avoriaz'
 import { random } from 'lodash'
-
-import bus from '@/components/event-bus'
+import eventBus from '@/components/event-bus'
 import { names as locales, prefixing } from '@/data/locales'
 
-exports.bus = bus
+export const bus = eventBus
 
 let getComponent = (component, propsData = {}) =>
   mount(component, {
     propsData
   })
-exports.getComponent = getComponent
 
-exports.testLocale = ({ component, defaults, data, property }) => {
+export { getComponent }
+
+let testBasic = ({ name, data, defaults, component, event }) => {
+  describe(name, () => {
+    let c = getComponent(component, {
+      defaults
+    })
+
+    it(`應該載入 ${data.length} 個${name}`, () => {
+      c.element.options.length.should.eql(data.length)
+    })
+
+    it(`應該預設選擇 ${defaults}`, () => {
+      c.element.value.should.eql(defaults)
+    })
+
+    it(`在切換時發出 ${event} 事件`, (done) => {
+      bus.$on(event.name, (data) => {
+        done()
+      })
+      c.element.selectedIndex = (c.element.selectedIndex + 1) % data.length
+      c.trigger('change')
+    })
+
+    testLocale({
+      component,
+      defaults,
+      data,
+      property: 'name'
+    })
+  })
+}
+export { testBasic }
+
+let testLocale = ({ component, defaults, data, property }) => {
   describe('語系', () => {
     locales.forEach((locale) => {
       it(locale, () => {
@@ -31,3 +63,4 @@ exports.testLocale = ({ component, defaults, data, property }) => {
     })
   })
 }
+export { testLocale }

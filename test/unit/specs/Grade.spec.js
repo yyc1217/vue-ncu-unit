@@ -1,12 +1,12 @@
 import { random } from 'lodash'
 
-import common from './common'
+import { getComponent, bus } from './common'
 import component from '@/components/grade.vue'
 import degrees from '@/data/degrees'
 
 let test = (degree, index, array) => {
   let defaults = random(2, degree.study_year).toString()
-  const c = common.getComponent(component, {
+  const c = getComponent(component, {
     degree: degree.id,
     defaults
   })
@@ -23,7 +23,7 @@ let test = (degree, index, array) => {
   let nextDegreeIndex = (index + 1) % array.length
   let nextDegree = array[nextDegreeIndex]
   it(`當學位改為 ${nextDegree.chinese_name} 時，修業上限應修改為 ${nextDegree.study_year} 年`, () => {
-    common.bus.$emit('change:degree', {
+    bus.$emit('change:degree', {
       degree: nextDegree
     })
   })
