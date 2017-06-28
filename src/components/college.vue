@@ -13,12 +13,18 @@
 <script>
 
 import colleges from '../data/colleges'
-import bus from './event-bus'
+import bus, { events } from './event-bus'
+
+import mixin from './mixin'
 
 export default {
 
     props: [
         'defaults'
+    ],
+
+    mixins: [
+        mixin
     ],
 
     data () {
@@ -30,7 +36,7 @@ export default {
 
     methods: {
         emitChange () {
-            bus.$emit('change:college', {
+            bus.$emit(events.changeCollege.name, {
                 college: this.selected
             })
         }
@@ -38,6 +44,3 @@ export default {
 }
 
 </script>
-
-<style>
-</style>

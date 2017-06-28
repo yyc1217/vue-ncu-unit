@@ -20,10 +20,16 @@ import mixin from './mixin'
 
 export default {
 
-    props: [
-        'type',
-        'transId'
-    ],
+    props: {
+        type: String,
+        transId: {
+            type: [
+                String,
+                Number
+            ],
+            required: true
+        }
+    },
 
     mixins: [
         mixin
@@ -48,7 +54,7 @@ export default {
                     return this.trans(this.departments)
 
                 default:
-                    throw new Error(`無法將 ${this.transId}} 翻譯成 ${this.type}`)
+                    throw new Error(`無法將id ${this.transId} 翻譯成類型 ${this.type}`)
             }
         }
     },

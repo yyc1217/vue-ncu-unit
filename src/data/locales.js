@@ -15,10 +15,9 @@ export default locales
 
 export const fallback = 'zh-TW'
 
-export function names () {
-  return map(locales, 'name')
-}
+export const names = map(locales, 'name')
 
-export function prefix (locale) {
-  return locales[locale].prefix
+export function prefixing (locale, property) {
+  let prefix = locales[locale].prefix
+  return `${prefix}_${property}`
 }

@@ -1,8 +1,8 @@
 import common from './common'
 import component from '@/components/trans.vue'
-import { names, prefix, fallback } from '@/data/locales'
+import { names, prefixing, fallback } from '@/data/locales'
 
-let locales = names().concat(undefined)
+let locales = names.concat(undefined)
 
 let types = [
   'college',
@@ -21,7 +21,7 @@ let test = (type, locale) => {
   })
 
   locale = locale === undefined ? fallback : locale
-  let text = data[`${prefix(locale)}_name`]
+  let text = data[prefixing(locale, 'name')]
   it(`應顯示 ${text}`, () => {
     c.text().should.eql(text)
   })

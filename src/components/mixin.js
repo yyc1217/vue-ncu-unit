@@ -1,4 +1,4 @@
-import { prefix, fallback } from '@/data/locales'
+import { prefixing, fallback } from '@/data/locales'
 
 module.exports = {
   props: {
@@ -13,7 +13,7 @@ module.exports = {
         throw new Error('obj is undefined')
       }
 
-      let property = `${prefix(this.locale)}_${prop}`
+      let property = prefixing(this.locale, prop)
 
       if (!obj.hasOwnProperty(property)) {
         throw new Error(`obj ${JSON.stringify(obj)} 沒有 ${property}`)
