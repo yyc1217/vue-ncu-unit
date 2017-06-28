@@ -1,7 +1,4 @@
-import { random } from 'lodash'
-
 import colleges from '@/data/colleges'
-import { names as locales, prefixing } from '@/data/locales'
 import common from './common'
 import component from '@/components/college.vue'
 import bus, { events } from '@/components/event-bus'
@@ -33,21 +30,10 @@ describe('學院', () => {
     c.trigger('change')
   })
 
-  describe('語系', () => {
-
-    locales.forEach((locale) => {
-      it(locale, () => {
-        c = common.getComponent(component, {
-          defaults,
-          locale
-        })
-
-        let index = random(colleges.length - 1)
-        c.element.selectedIndex = index
-
-        let propertyName = prefixing(locale, 'name')
-        c.element.options[index].text.should.be.eql(colleges[index][propertyName])
-      })
-    })
+  common.testLocale({
+    component,
+    defaults,
+    data: colleges,
+    property: 'name'
   })
 })
