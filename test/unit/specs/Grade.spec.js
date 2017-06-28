@@ -1,16 +1,17 @@
+import { random } from 'lodash'
+
 import common from './common'
 import component from '@/components/grade.vue'
 import degrees from '@/data/degrees'
-import _ from 'lodash'
 
 let test = (degree, index, array) => {
-  let defaults = _.random(2, degree.study_year).toString()
+  let defaults = random(2, degree.study_year).toString()
   const c = common.getComponent(component, {
     degree: degree.id,
     defaults
   })
 
-  it(`修業上限為 ${degree.study_year} 年`, () => {
+  it(`修業上限應為 ${degree.study_year} 年`, () => {
     let options = c.element.getElementsByTagName('option')
     options.length.should.eql(degree.study_year)
   })

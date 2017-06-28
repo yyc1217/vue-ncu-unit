@@ -16,15 +16,24 @@ import degrees from '../data/degrees'
 import colleges from '../data/colleges'
 import departments from '../data/departments'
 
+import mixin from './mixin'
+
 export default {
 
-    props: ['type', 'transId'],
+    props: [
+        'type',
+        'transId'
+    ],
+
+    mixins: [
+        mixin
+    ],
 
     data () {
         return {
             degrees : _.keyBy(degrees, 'id'),
             colleges : _.keyBy(colleges, 'id'),
-            departments : _.keyBy(departments, 'chinese_name')
+            departments : _.keyBy(departments, 'id')
         }
     },
 

@@ -1,13 +1,9 @@
-
-const prefixes = {
-  'en': 'english',
-  'zh-TW': 'chinese'
-}
+import { prefix, fallback } from '@/data/locales'
 
 module.exports = {
   props: {
     'locale': {
-      default: 'zh-TW'
+      default: fallback
     }
   },
 
@@ -17,7 +13,7 @@ module.exports = {
         throw new Error('obj is undefined')
       }
 
-      let property = `${prefixes[this.locale]}_${prop}`
+      let property = `${prefix(this.locale)}_${prop}`
 
       if (!obj.hasOwnProperty(property)) {
         throw new Error(`obj ${JSON.stringify(obj)} 沒有 ${property}`)
