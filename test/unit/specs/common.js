@@ -1,4 +1,4 @@
-import 'should'
+import should from 'should'
 import { mount } from 'avoriaz'
 import { random } from 'lodash'
 import eventBus from '@/components/event-bus'
@@ -27,8 +27,9 @@ let testBasic = ({ name, data, defaults, component, event }) => {
       c.element.value.should.eql(defaults)
     })
 
-    it(`在切換時發出 ${event} 事件`, (done) => {
+    it(`在切換時發出 ${event} 事件，並且有送出資料`, (done) => {
       bus.$on(event.name, (data) => {
+        should(data).not.be.empty()
         done()
       })
       c.element.selectedIndex = (c.element.selectedIndex + 1) % data.length
