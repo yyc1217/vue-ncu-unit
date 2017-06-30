@@ -1,10 +1,11 @@
 <template>
 
-<select v-model="selected">
+<select v-model="selected"
+        v-on:change="emitChange">
 
     <option v-for="department in filtered"
             v-bind:value="department.chinese_name"
-            v-bind:key="department.id">{{ $t(department, 'name') }}</option>
+            v-bind:key="department.id + department.chinese_name">{{ $t(department, 'name') }}</option>
 
 </select>
 
@@ -14,7 +15,8 @@
 
 import degrees from '../data/degrees'
 import departments from '../data/departments'
-import bus from './event-bus'
+import bus, { events } from './event-bus'
+import mixin from './mixin'
 
 export default {
 
@@ -31,6 +33,10 @@ export default {
         }
     },
 
+    mixins: [
+        mixin
+    ],
+
     data () {
         return {
             departments,
@@ -40,11 +46,11 @@ export default {
     },
 
     mounted () {
-        bus.$on('change:college', (data) => {
+        bus.$on(events.changeCollege.name, (data) => {
             this.filter.college = data.college
         });
 
-        bus.$on('change:degree', (data) => {
+        bus.$on(events.changeDegree.name, (data) => {
             this.filter.degree = data.degree
         });
     },
@@ -64,6 +70,13 @@ export default {
                     .filter((department) => {
                         return this.filter.degree === undefined || department.study_system_no == study_system_no
                     })
+        }
+    },
+    methods: {
+        emitChange () {
+            bus.$emit(events.changeDepartment.name, {
+                department: this.selected
+            })
         }
     }
 }

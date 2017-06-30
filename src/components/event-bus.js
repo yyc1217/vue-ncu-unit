@@ -7,7 +7,8 @@ export default new Vue()
 class Event extends Enum {}
 Event.initEnum([
   'changeCollege',
-  'changeDegree'
+  'changeDegree',
+  'changeDepartment'
 ])
 
 export const events = Event
