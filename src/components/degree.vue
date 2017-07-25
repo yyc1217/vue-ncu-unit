@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import _ from 'lodash'
 
 import degrees from '../data/degrees'
 import bus, { events } from './event-bus'
@@ -36,8 +37,9 @@ export default {
 
     methods: {
         emitChange () {
+            let degree = _.keyBy(this.degrees, 'id')[this.selected]
             bus.$emit(events.changeDegree.name, {
-                degree: this.selected
+                degree
             })
         }
     }

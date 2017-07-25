@@ -1,8 +1,10 @@
 import { random } from 'lodash'
 
+import Vue from 'vue'
 import { getComponent, bus } from './common'
 import component from '@/components/grade.vue'
 import degrees from '@/data/degrees'
+import { events } from '@/components/event-bus'
 
 let test = (degree, index, array) => {
   let defaults = random(2, degree.study_year).toString()
@@ -12,8 +14,7 @@ let test = (degree, index, array) => {
   })
 
   it(`修業上限應為 ${degree.study_year} 年`, () => {
-    let options = c.element.getElementsByTagName('option')
-    options.length.should.eql(degree.study_year)
+    c.element.options.length.should.eql(degree.study_year)
   })
 
   it(`應該預設選擇第 ${defaults} 年`, () => {
@@ -22,9 +23,14 @@ let test = (degree, index, array) => {
 
   let nextDegreeIndex = (index + 1) % array.length
   let nextDegree = array[nextDegreeIndex]
-  it(`當學位改為 ${nextDegree.chinese_name} 時，修業上限應修改為 ${nextDegree.study_year} 年`, () => {
-    bus.$emit('change:degree', {
+  it(`當學位改為 ${nextDegree.chinese_name} 時，修業上限應從 ${degree.study_year} 年修改為 ${nextDegree.study_year} 年`, (done) => {
+    bus.$emit(events.changeDegree.name, {
       degree: nextDegree
+    })
+
+    Vue.nextTick(() => {
+      c.element.options.length.should.eql(nextDegree.study_year)
+      done()
     })
   })
 }

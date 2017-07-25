@@ -45,7 +45,7 @@ export default {
         }
     },
 
-    mounted () {
+    created () {
         bus.$on(events.changeCollege.name, (data) => {
             this.filter.college = data.college
         });
@@ -72,6 +72,7 @@ export default {
                     })
         }
     },
+
     methods: {
         emitChange () {
             bus.$emit(events.changeDepartment.name, {

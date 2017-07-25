@@ -13,7 +13,7 @@
 <script>
 
 import degrees from '../data/degrees'
-import bus from './event-bus'
+import bus, { events } from './event-bus'
 
 export default {
 
@@ -32,16 +32,16 @@ export default {
     computed: {
         years () {
 
-            let degree = degrees.filter((degree) => degree.chinese_name === this.degree_id)[0]
+            let degree = degrees.filter((degree) => degree.id === this.degree_id)[0]
             let study_year = degree && degree.study_year || 0
 
             return study_year
         }
     },
 
-    mounted () {
-        bus.$on('change:degree', (data) => {
-            this.degree_id = data.degree
+    created () {
+        bus.$on(events.changeDegree.name, (data) => {
+            this.degree_id = data.degree.id
         })
     }
 }

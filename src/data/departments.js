@@ -1066,7 +1066,7 @@ module.exports = [
   }, {
     'id': 6206,
     'chinese_name': '水文與海洋科學研究所',
-    'english_name': 'MSc in Hydrologocal and  Oceanic Sciences',
+    'english_name': 'MSc in Hydrologocal and Oceanic Sciences',
     'study_system_no': 2,
     'parent_id': 6206,
     'college': '地球科學學院'
@@ -1108,7 +1108,7 @@ module.exports = [
   }, {
     'id': 6406,
     'chinese_name': '水文與海洋科學研究所',
-    'english_name': 'PhD in Hydrologocal and  Oceanic Sciences',
+    'english_name': 'PhD in Hydrologocal and Oceanic Sciences',
     'study_system_no': 4,
     'parent_id': 6206,
     'college': '地球科學學院'
@@ -1129,7 +1129,7 @@ module.exports = [
   }, {
     'id': 7204,
     'chinese_name': '法律與政府研究所碩士班',
-    'english_name': 'Institute of  Law and Government',
+    'english_name': 'Institute of Law and Government',
     'study_system_no': 2,
     'parent_id': 7204,
     'college': '客家學院'

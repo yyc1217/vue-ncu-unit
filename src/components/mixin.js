@@ -4,6 +4,9 @@ module.exports = {
   props: {
     'locale': {
       default: fallback
+    },
+    'fallbackLocale': {
+      default: fallback
     }
   },
 
@@ -13,13 +16,19 @@ module.exports = {
         throw new Error('obj is undefined')
       }
 
+      // 有該property且不為空
       let property = prefixing(this.locale, prop)
-
-      if (!obj.hasOwnProperty(property)) {
-        throw new Error(`obj ${JSON.stringify(obj)} 沒有 ${property}`)
+      if (obj.hasOwnProperty(property) && obj[property]) {
+        return obj[property]
       }
 
-      return obj[property]
+      // 有該fallback property且不為空
+      let fallbackProperty = prefixing(this.fallbackLocale, prop)
+      if (obj.hasOwnProperty(fallbackProperty) && obj[fallbackProperty]) {
+        return obj[fallbackProperty]
+      }
+
+      throw new Error(`obj ${JSON.stringify(obj)} 沒有 ${property} 也沒有 ${fallbackProperty}`)
     }
   }
 }
