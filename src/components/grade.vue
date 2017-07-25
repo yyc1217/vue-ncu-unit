@@ -33,9 +33,11 @@ export default {
         years () {
 
             let degree = degrees.filter((degree) => degree.id === this.degree_id)[0]
-            let study_year = degree && degree.study_year || 0
+            if (!degree && !degree.study_year) {
+                throw new Error('不存在該學位，degree id=' + this.degree_id)
+            }
 
-            return study_year
+            return degree.study_year
         }
     },
 
