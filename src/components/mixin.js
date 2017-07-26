@@ -1,6 +1,6 @@
 import { prefixing, fallback } from '@/data/locales'
 
-module.exports = {
+export default {
   props: {
     'locale': {
       default: fallback

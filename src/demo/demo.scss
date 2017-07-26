@@ -1,6 +1,9 @@
 .page-title {
     text-align: center;
-    padding-top: 20px;
+
+    &--primary {
+        padding-top: 20px;
+    }
 }
 .bookmark {
     text-decoration: none;
