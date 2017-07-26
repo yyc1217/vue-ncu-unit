@@ -42,7 +42,17 @@
 
         <div class="nine columns">
           <pre><code class="javascript hljs">
-暫時空白
+import { College } from 'vue-ncu-unit'
+
+...
+  componets: {
+    College,
+  },
+...
+          </code></pre>
+
+          <pre><code class="html hljs">
+&ltcollege defaults=&quot工學院&quot&gt&lt/college&gt
           </code></pre>
         </div>
       </div>
@@ -58,9 +68,24 @@
         </div>
 
         <div class="nine columns">
+
           <pre><code class="javascript hljs">
-暫時空白
-          </code></pre>
+  import { Department } from 'vue-ncu-unit'
+
+  ...
+    componets: {
+      Department
+    },
+  ...
+            </code></pre>
+
+            <pre><code class="html hljs">
+  &ltdepartment defaults=&quot環境工程研究所&quot
+              :filtering=&quot{
+                              college: '工學院',
+                              degree: '碩士班'
+                          }&quot&gt&lt/department&gt
+            </code></pre>
         </div>
       </div>
 
@@ -72,7 +97,17 @@
 
         <div class="nine columns">
           <pre><code class="javascript hljs">
-暫時空白
+  import { Degree } from 'vue-ncu-unit'
+
+  ...
+    componets: {
+      Degree,
+    },
+  ...
+          </code></pre>
+
+          <pre><code class="html hljs">
+&ltdegree defaults=&quot碩士班&quot&gt&lt/degree&gt
           </code></pre>
         </div>
       </div>
@@ -81,13 +116,26 @@
         <div class="three columns">
           <h4 class="subtitle" id="年級"><a href="#年級" class="bookmark">#</a> 年級</h4>
           <degree defaults="碩士班"></degree>
-          這邊要有grade
+          <grade degree="碩士班" defaults="3"></grade>
         </div>
 
         <div class="nine columns">
           <pre><code class="javascript hljs">
-暫時空白
+  import { Degree, Grade } from 'vue-ncu-unit'
+
+  ...
+    componets: {
+      Degree,
+      Grade
+    },
+  ...
           </code></pre>
+
+          <pre><code class="html hljs">
+&ltdegree defaults=&quot碩士班&quot&gt&lt/degree&gt
+&ltgrade degree=&quot碩士班&quot&gt&lt/degree&gt
+            </code>
+          </pre>
         </div>
       </div>
 
