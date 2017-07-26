@@ -1,6 +1,7 @@
 <template>
 
-<select v-model="selected"
+<select class="ncu-unit ncu-unit--college"
+        v-model="selected"
         v-on:change="emitChange">
 
     <option v-for="college in colleges"

@@ -1,6 +1,7 @@
 <template>
 
-<select v-model="grade">
+<select class="ncu-unit ncu-unit--grade"
+        v-model="grade">
 
     <option v-for="n in years"
             v-bind:value="n"

@@ -1,6 +1,7 @@
 <template>
 
-<select v-model="selected"
+<select class="ncuunit ncuunit--degree"
+        v-model="selected"
         v-on:change="emitChange">
 
     <option v-for="degree in degrees" v-bind:data-study_year="degree.study_year"

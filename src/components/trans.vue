@@ -1,6 +1,6 @@
 <template>
 
-<span>{{ translated }}</span>
+<span class="ncu-unit ncu-unit--trans">{{ translated }}</span>
 
 </template>
 
