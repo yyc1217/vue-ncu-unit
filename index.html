@@ -37,7 +37,7 @@
      <div class="row">
         <div class="three columns">
           <h4 class="subtitle" id="學院"><a href="#學院" class="bookmark">#</a> 學院</h4>
-          <college></college>
+          <college defaults="工學院"></college>
         </div>
 
         <div class="nine columns">
@@ -46,6 +46,226 @@
           </code></pre>
         </div>
       </div>
+
+     <div class="row">
+        <div class="three columns">
+          <h4 class="subtitle" id="系所"><a href="#系所" class="bookmark">#</a> 系所</h4>
+          <department defaults="環境工程研究所"
+                      :filtering="{
+                                      college: '工學院',
+                                      degree: '碩士班'
+                                    }"></department>
+        </div>
+
+        <div class="nine columns">
+          <pre><code class="javascript hljs">
+暫時空白
+          </code></pre>
+        </div>
+      </div>
+
+     <div class="row">
+        <div class="three columns">
+          <h4 class="subtitle" id="學級"><a href="#學級" class="bookmark">#</a> 學級</h4>
+          <degree defaults="碩士班"></degree>
+        </div>
+
+        <div class="nine columns">
+          <pre><code class="javascript hljs">
+暫時空白
+          </code></pre>
+        </div>
+      </div>
+
+     <div class="row">
+        <div class="three columns">
+          <h4 class="subtitle" id="年級"><a href="#年級" class="bookmark">#</a> 年級</h4>
+          <degree defaults="碩士班"></degree>
+          這邊要有grade
+        </div>
+
+        <div class="nine columns">
+          <pre><code class="javascript hljs">
+暫時空白
+          </code></pre>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="three columns">
+          <h4 class="subtitle" id="事件"><a href="#事件" class="bookmark">#</a> 事件</h4>
+          <degree defaults="學士班"></degree>
+          <p>demoCallback: <code></code></p>
+          <p><small>若有在 parent 的 data 給予 bus 參數作為事件的 emitter ，則 components 下的每個 component 會分別 emit<code>change</code>事件，並送出一個更新後的值<code>value</code>；可使用<code>$on</code>來接收。</small><p>
+        </div>
+
+        <div class="nine columns">
+          <pre><code class="javascript hljs">
+暫時空白
+          </code></pre>
+        </div>
+      </div>
+
+     <div class="row">
+        <div class="three columns">
+          <h4 class="subtitle" id="篩選系所"><a href="#篩選系所" class="bookmark">#</a> 篩選系所</h4>
+          <degree defaults="碩士班"></degree>
+          <college defaults="工學院"></college>
+          <department defaults="環境工程研究所"
+                      :filtering="{
+                                      college: '工學院',
+                                      degree: '碩士班'
+                                    }"></department>
+        </div>
+
+        <div class="nine columns">
+          <pre><code class="javascript hljs">
+暫時空白
+          </code></pre>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="three columns">
+          <h4 class="subtitle" id="樣式"><a href="#樣式" class="bookmark">#</a> 樣式</h4>
+          <degree class="demo" defaults="博士班"></degree>
+          這裡要有grade
+          <college class="demo" defaults="工學院"></college>
+          <department class="demo" defaults="環境工程研究所"
+                      :filtering="{
+                                      college: '工學院',
+                                      degree: '碩士班'
+                                    }"></department>
+        </div>
+
+        <div class="nine columns">
+          <pre><code class="javascript hljs">
+暫時空白
+          </code></pre>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="three columns">
+          <h4 class="subtitle" id="英語"><a href="#英語" class="bookmark">#</a> 英語</h4>
+          <degree defaults="博士班" locale="en"></degree>
+          這裡要有grade
+          <college defaults="工學院" locale="en"></college>
+          <department locale="en"
+                      defaults="環境工程研究所"
+                      :filtering="{
+                                      college: '工學院',
+                                      degree: '碩士班'
+                                    }"></department>
+        </div>
+
+        <div class="nine columns">
+          <pre><code class="javascript hljs">
+暫時空白
+          </code></pre>
+        </div>
+      </div>
+
+    <div class="row">
+      <div class="twelve columns">
+        <h4 class="subtitle subtitle--left" id="props"><a href="#props" class="bookmark">#</a> props與預設值</h4>
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th></th>
+              <th>counties.vue</th>
+              <th>zipcodes.vue</th>
+              <th>zipcodes.groupby.vue</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>value-locale</th>
+              <td><code>zh-tw</code></td>
+              <td><code>zh-tw</code></td>
+              <td><code>zh-tw</code></td>
+              <td><a href="https://github.com/yyc1217/twzipcode-data/blob/master/src/locales.js">locale.js</a></td>
+            </tr>
+            <tr>
+              <th>value-template</th>
+              <td><code>:id</code></td>
+              <td><code>:id</code></td>
+              <td><code>:id</code></td>
+              <td><a href="https://github.com/yyc1217/twzipcode-data#資料結構--data-structure">資料結構</a>
+            </tr>
+            <tr>
+              <th>text-locale</th>
+              <td><code>zh-tw</code></td>
+              <td><code>zh-tw</code></td>
+              <td><code>zh-tw</code></td>
+              <td><a href="https://github.com/yyc1217/twzipcode-data/blob/master/src/locales.js">locale.js</a></td>
+            </tr>
+            <tr>
+              <th>text-template</th>
+              <td><code>:id</code></td>
+              <td><code>:id :county :city</code></td>
+              <td><code>:city</code></td>
+              <td><a href="https://github.com/yyc1217/twzipcode-data#資料結構--data-structure">資料結構</a>
+            </tr>
+            <tr>
+              <th>id</th>
+              <td><code>twzipcode__county</code></td>
+              <td><code>twzipcode__zipcode</code></td>
+              <td><code>twzipcode__zipcode--groupby</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>class</th>
+              <td><code>twzipcode</code><code>twzipcode__county</code></td>
+              <td><code>twzipcode</code><code>twzipcode__zipcode</code></td>
+              <td><code>twzipcode</code><code>twzipcode__zipcode</code><br><code>twzipcode__zipcode--groupby</code></td>
+              <td>若有指定其他 className ，則會附加在預設值後面。</td>
+            </tr>
+            <tr>
+              <th>name</th>
+              <td><code>county</code></td>
+              <td><code>zipcode</code></td>
+              <td><code>zipcode</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>selected</th>
+              <td>第一筆資料</td>
+              <td>第一筆資料</td>
+              <td>第一筆資料</td>
+              <td>以 value 為準，若有更動 value 的格式，則需符合更改後格式。</td>
+            </tr>
+            <tr>
+              <th>listen-to-county</th>
+              <td>X</td>
+              <td><code>twzipcode__county</code></td>
+              <td>X</td>
+              <td>縣市<code>&lt;select&gt;</code>的 id ，按縣市篩選郵遞區號</td>
+            </tr>
+            <tr>
+              <th>filter-by-county</th>
+              <td>X</td>
+              <td><code>undefined</code></td>
+              <td>X</td>
+              <td>縣市的 id ，初始時要依哪個縣市篩選郵遞區號</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th colspan="5"><small>如果要設定其他 attribute ，只需要按平常方式即可，例如<code>&lt;twzipcode-county size=&quot;10&quot; required&gt;&lt;/twzipcode-county&gt;</code></small></th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="twelve columns">
+        資料來源：<a href="https://github.com/yyc1217/twzipcode-data">twzipcode-data</a>
+      </div>
+    </div>
+  </div>
 
     </div>
     <!-- built files will be auto injected -->

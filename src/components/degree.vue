@@ -1,6 +1,6 @@
 <template>
 
-<select class="ncuunit ncuunit--degree"
+<select class="ncu-unit ncu-unit--degree"
         v-model="selected"
         v-on:change="emitChange">
 

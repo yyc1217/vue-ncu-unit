@@ -43,19 +43,23 @@ table td, table th {
 }
 
 .demo {
-    &.twzipcode {
+    &.ncu-unit {
         font-weight: 700;
     }
-    &.twzipcode__county {
+    &.ncu-unit--college {
         background-color: red;
         color: white;
     }
-    &.twzipcode__zipcode.twzipcode__zipcode--groupby {
+    &.ncu-unit--department {
         background-color: yellow;
         color: brown;
     }
-    &.twzipcode__zipcode {
+    &.ncu-unit--degree {
         background-color: lightskyblue;
         color: dimgrey;
+    }
+    &.ncu-unit--grade {
+        background-color: lightskyblue;
+        color: dimgrey;       
     }
 }
