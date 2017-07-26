@@ -177,12 +177,12 @@ import { College } from 'vue-ncu-unit'
         <div class="three columns">
           <h4 class="subtitle" id="樣式"><a href="#樣式" class="bookmark">#</a> 樣式</h4>
           <degree class="demo" defaults="博士班"></degree>
-          這裡要有grade
+          <grade class="demo" degree="博士班" defaults="3"></grade>
           <college class="demo" defaults="工學院"></college>
           <department class="demo" defaults="環境工程研究所"
                       :filtering="{
                                       college: '工學院',
-                                      degree: '碩士班'
+                                      degree: '博士班'
                                     }"></department>
         </div>
 
@@ -197,7 +197,7 @@ import { College } from 'vue-ncu-unit'
         <div class="three columns">
           <h4 class="subtitle" id="英語"><a href="#英語" class="bookmark">#</a> 英語</h4>
           <degree defaults="博士班" locale="en"></degree>
-          這裡要有grade
+          <grade degree="博士班" defaults="3" locale="en"></grade>
           <college defaults="工學院" locale="en"></college>
           <department locale="en"
                       defaults="環境工程研究所"

@@ -2,6 +2,7 @@
 
 <select class="ncu-unit ncu-unit--grade"
         v-bind:id="id"
+        v-bind:title="$t(i18n.grade, 'name')"
         v-model="grade">
 
     <option v-for="n in years"
@@ -17,6 +18,8 @@
 import degrees from '../data/degrees'
 import bus, { events } from './event-bus'
 
+import mixin from './mixin'
+
 export default {
 
     props: {
@@ -25,8 +28,15 @@ export default {
             default: 'ncu-unit--grade'
         },
         defaults: String,
-        degree: String
+        degree: {
+            type: String,
+            required: true
+        }
     },
+
+    mixins: [
+        mixin
+    ],
 
     data () {
         return {

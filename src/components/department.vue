@@ -2,6 +2,7 @@
 
 <select class="ncu-unit ncu-unit--department"
         v-bind:id="id"
+        v-bind:title="$t(i18n.department, 'name')"
         v-model="selected"
         v-on:change="emitChange">
 

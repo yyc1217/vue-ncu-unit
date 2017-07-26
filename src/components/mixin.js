@@ -1,4 +1,4 @@
-import { prefixing, fallback } from '@/data/locales'
+import { prefixing, fallback, i18n } from '@/data/locales'
 
 export default {
   props: {
@@ -7,6 +7,10 @@ export default {
     },
     fallbackLocale: {
       default: fallback
+    },
+    i18n: {
+      type: Object,
+      default: () => i18n
     }
   },
 

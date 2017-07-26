@@ -1,7 +1,8 @@
 <template>
 
 <span class="ncu-unit ncu-unit--trans"
-      v-bind:id="id">{{ translated }}</span>
+      v-bind:id="id"
+      v-bind:title="$t(i18n[type], 'name')">{{ translated }}</span>
 
 </template>
 
