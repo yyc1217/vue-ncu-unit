@@ -1,6 +1,7 @@
 <template>
 
 <select class="ncu-unit ncu-unit--degree"
+        v-bind:id="id"
         v-model="selected"
         v-on:change="emitChange">
 
@@ -13,7 +14,7 @@
 </template>
 
 <script>
-import _ from 'lodash'
+import { keyBy } from 'lodash'
 
 import degrees from '../data/degrees'
 import bus, { events } from './event-bus'
@@ -21,9 +22,13 @@ import mixin from './mixin'
 
 export default {
 
-    props : [
-        'defaults'
-    ],
+    props : {
+        defaults: String,
+        id: {
+            type: String,
+            default: 'ncu-unit--degree'
+        }
+    },
 
     mixins : [
         mixin
@@ -38,7 +43,7 @@ export default {
 
     methods: {
         emitChange () {
-            let degree = _.keyBy(this.degrees, 'id')[this.selected]
+            let degree = keyBy(this.degrees, 'id')[this.selected]
             bus.$emit(events.changeDegree.name, {
                 degree
             })

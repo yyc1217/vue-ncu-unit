@@ -1,6 +1,7 @@
 <template>
 
 <select class="ncu-unit ncu-unit--grade"
+        v-bind:id="id"
         v-model="grade">
 
     <option v-for="n in years"
@@ -18,10 +19,14 @@ import bus, { events } from './event-bus'
 
 export default {
 
-    props: [
-        'defaults',
-        'degree'
-    ],
+    props: {
+        id: {
+            type: String,
+            default: 'ncu-unit--grade'
+        },
+        defaults: String,
+        degree: String
+    },
 
     data () {
         return {

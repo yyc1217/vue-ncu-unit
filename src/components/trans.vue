@@ -1,6 +1,7 @@
 <template>
 
-<span class="ncu-unit ncu-unit--trans">{{ translated }}</span>
+<span class="ncu-unit ncu-unit--trans"
+      v-bind:id="id">{{ translated }}</span>
 
 </template>
 
@@ -11,7 +12,7 @@
 *
 */
 
-import _ from 'lodash'
+import { keyBy } from 'lodash'
 import degrees from '../data/degrees'
 import colleges from '../data/colleges'
 import departments from '../data/departments'
@@ -21,6 +22,10 @@ import mixin from './mixin'
 export default {
 
     props: {
+        id: {
+            type: String,
+            default: 'ncu-unit--trans'
+        },
         type: String,
         transId: {
             type: [
@@ -37,9 +42,9 @@ export default {
 
     data () {
         return {
-            degrees : _.keyBy(degrees, 'id'),
-            colleges : _.keyBy(colleges, 'id'),
-            departments : _.keyBy(departments, 'id')
+            degrees : keyBy(degrees, 'id'),
+            colleges : keyBy(colleges, 'id'),
+            departments : keyBy(departments, 'id')
         }
     },
 

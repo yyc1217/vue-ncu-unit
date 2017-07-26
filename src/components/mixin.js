@@ -2,10 +2,10 @@ import { prefixing, fallback } from '@/data/locales'
 
 export default {
   props: {
-    'locale': {
+    locale: {
       default: fallback
     },
-    'fallbackLocale': {
+    fallbackLocale: {
       default: fallback
     }
   },

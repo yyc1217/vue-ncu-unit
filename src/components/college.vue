@@ -1,6 +1,7 @@
 <template>
 
 <select class="ncu-unit ncu-unit--college"
+        v-bind:id="id"
         v-model="selected"
         v-on:change="emitChange">
 
@@ -20,9 +21,13 @@ import mixin from './mixin'
 
 export default {
 
-    props: [
-        'defaults'
-    ],
+    props: {
+        defaults: String,
+        id: {
+            type: String,
+            default: 'ncu-unit--college'
+        }
+    },
 
     mixins: [
         mixin
