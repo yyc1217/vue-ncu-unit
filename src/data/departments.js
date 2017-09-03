@@ -380,7 +380,7 @@ module.exports = [
   }, {
     'id': 3004,
     'chinese_name': '化學工程與材料工程學系',
-    'english_name': 'Department of  Chemical Engineering',
+    'english_name': 'Department of Chemical Engineering',
     'study_system_no': 1,
     'parent_id': 3004,
     'college': '工學院'
@@ -471,7 +471,7 @@ module.exports = [
   }, {
     'id': 3305,
     'chinese_name': '營建管理研究所碩士在職專班',
-    'english_name': 'MSc  in Construction Engineering and Manageme',
+    'english_name': 'MSc in Construction Engineering and Manageme',
     'study_system_no': 3,
     'parent_id': 3205,
     'college': '工學院'

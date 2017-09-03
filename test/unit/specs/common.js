@@ -15,8 +15,11 @@ export { getComponent }
 
 let testBasic = ({ name, data, defaults, component, event }) => {
   describe(name, () => {
-    let c = getComponent(component, {
-      defaults
+    let c
+    beforeEach(() => {
+      c = getComponent(component, {
+        defaults
+      })
     })
 
     it(`應該載入 ${data.length} 個${name}`, () => {

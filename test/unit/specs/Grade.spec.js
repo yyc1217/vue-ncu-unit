@@ -8,9 +8,12 @@ import { events } from '@/components/event-bus'
 
 let test = (degree, index, array) => {
   let defaults = random(2, degree.study_year).toString()
-  const c = getComponent(component, {
-    degree: degree.id,
-    defaults
+  let c
+  beforeEach(() => {
+    c = getComponent(component, {
+      degree: degree.id,
+      defaults
+    })
   })
 
   it(`修業上限應為 ${degree.study_year} 年`, () => {

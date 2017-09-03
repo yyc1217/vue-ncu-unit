@@ -14,10 +14,13 @@ let test = (type, locale) => {
   let datas = require(`@/data/${type}s`)
   let data = datas[0]
 
-  const c = getComponent(component, {
-    type,
-    transId: data.id,
-    locale
+  let c
+  beforeEach(() => {
+    c = getComponent(component, {
+      type,
+      transId: data.id,
+      locale
+    })
   })
 
   locale = locale === undefined ? fallback : locale
