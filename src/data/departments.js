@@ -191,7 +191,7 @@ module.exports = [
   }, {
     'id': 2202,
     'chinese_name': '物理學系',
-    'english_name': 'MSc  in Physics',
+    'english_name': 'MSc in Physics',
     'study_system_no': 2,
     'parent_id': 2002,
     'college': '理學院'
@@ -212,7 +212,7 @@ module.exports = [
   }, {
     'id': 2206,
     'chinese_name': '光電科學與工程學系',
-    'english_name': 'MSc in  Optics and Photonics',
+    'english_name': 'MSc in Optics and Photonics',
     'study_system_no': 2,
     'parent_id': 2006,
     'college': '理學院'
@@ -303,7 +303,7 @@ module.exports = [
   }, {
     'id': 2410,
     'chinese_name': '物理學系生物物理博士班',
-    'english_name': 'PhD in  Biophysics',
+    'english_name': 'PhD in Biophysics',
     'study_system_no': 4,
     'parent_id': 2002,
     'college': '理學院'
@@ -835,7 +835,7 @@ module.exports = [
   }, {
     'id': 4408,
     'chinese_name': '財務金融學系',
-    'english_name': 'PhD in  Finance',
+    'english_name': 'PhD in Finance',
     'study_system_no': 4,
     'parent_id': 4008,
     'college': '管理學院'
@@ -961,7 +961,7 @@ module.exports = [
   }, {
     'id': 5404,
     'chinese_name': '網路學習科技研究所',
-    'english_name': 'PhD in  Institute of Network Learning Technology',
+    'english_name': 'PhD in Institute of Network Learning Technology',
     'study_system_no': 4,
     'parent_id': 5204,
     'college': '資訊電機學院'
@@ -989,7 +989,7 @@ module.exports = [
   }, {
     'id': 5904,
     'chinese_name': '資電學院嵌入式系統產業研發碩士外國學生專班',
-    'english_name': 'Industrial Technology Research and  Development Master Program on Embedded Systems, College of Elect',
+    'english_name': 'Industrial Technology Research and Development Master Program on Embedded Systems, College of Elect',
     'study_system_no': 9,
     'parent_id': 5001,
     'college': '資訊電機學院'
