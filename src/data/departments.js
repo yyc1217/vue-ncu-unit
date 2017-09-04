@@ -161,13 +161,6 @@ module.exports = [
     'parent_id': 2003,
     'college': '理學院'
   }, {
-    'id': 2005,
-    'chinese_name': '物理與地球科學系',
-    'english_name': '',
-    'study_system_no': 1,
-    'parent_id': 2005,
-    'college': '理學院'
-  }, {
     'id': 2006,
     'chinese_name': '光電科學與工程學系',
     'english_name': 'Department of Optics and Photonics',
