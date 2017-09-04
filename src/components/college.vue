@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { keyBy } from 'lodash'
 
 import colleges from '../data/colleges'
 import bus, { events } from './event-bus'
@@ -43,8 +44,9 @@ export default {
 
     methods: {
         emitChange () {
+            let college = keyBy(this.colleges, 'id')[this.selected]
             bus.$emit(events.changeCollege.name, {
-                college: this.selected
+                college
             })
         }
     }

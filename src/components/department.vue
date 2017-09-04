@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { keyBy } from 'lodash'
 
 import degrees from '../data/degrees'
 import departments from '../data/departments'
@@ -54,18 +55,18 @@ export default {
 
     created () {
         bus.$on(events.changeCollege.name, (data) => {
-            this.filter.college = data.college
+            this.filter.college = data.college.id
         });
 
         bus.$on(events.changeDegree.name, (data) => {
-            this.filter.degree = data.degree
+            this.filter.degree = data.degree.id
         });
     },
 
     computed: {
         filtered () {
 
-            let degree = degrees.filter((degree) => degree.id == this.filter.degree)[0]
+            let degree = degrees.filter((degree) => degree.id === this.filter.degree)[0]
             let study_system_no = degree && degree.study_system_no || -1
 
             return this.departments
@@ -82,8 +83,9 @@ export default {
 
     methods: {
         emitChange () {
+            let department = keyBy(this.departments, 'id')[this.selected]
             bus.$emit(events.changeDepartment.name, {
-                department: this.selected
+                department
             })
         }
     }
