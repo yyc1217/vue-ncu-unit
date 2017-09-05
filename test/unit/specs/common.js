@@ -31,7 +31,7 @@ let testBasic = ({ name, data, defaults, component, event }) => {
     })
 
     it(`在切換時發出 ${event} 事件，並且有送出資料`, (done) => {
-      bus.$on(event.name, (data) => {
+      bus.$on(event.withID(c.element.id), (data) => {
         should(data).not.be.empty()
         done()
       })

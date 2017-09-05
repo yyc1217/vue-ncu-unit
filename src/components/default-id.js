@@ -1,0 +1,5 @@
+exports.departmentID = 'ncu-unit--department'
+exports.collegeID = 'ncu-unit--college'
+exports.degreeID = 'ncu-unit--degree'
+exports.gradeID = 'ncu-unit--grade'
+exports.transID = 'ncu-unit--trans'

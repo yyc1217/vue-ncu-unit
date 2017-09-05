@@ -20,6 +20,7 @@ import { keyBy } from 'lodash'
 import degrees from '../data/degrees'
 import departments from '../data/departments'
 import bus, { events } from './event-bus'
+import { departmentID, collegeID, degreeID } from './default-id'
 import mixin from './mixin'
 
 export default {
@@ -27,7 +28,7 @@ export default {
     props: {
         id: {
             type: String,
-            default: 'ncu-unit--department'
+            default: departmentID
         },
         defaults: String,
         filtering: {
@@ -38,6 +39,14 @@ export default {
                     degree: undefined
                 }
             }
+        },
+        listenToCollege: {
+            type: String,
+            default: collegeID
+        },
+        listenToDegree: {
+            type: String,
+            default: degreeID
         }
     },
 
@@ -54,11 +63,11 @@ export default {
     },
 
     created () {
-        bus.$on(events.changeCollege.name, (data) => {
+        bus.$on(events.changeCollege.withID(this.listenToCollege), (data) => {
             this.filter.college = data.college.id
         });
 
-        bus.$on(events.changeDegree.name, (data) => {
+        bus.$on(events.changeDegree.withID(this.listenToDegree), (data) => {
             this.filter.degree = data.degree.id
         });
     },
@@ -84,7 +93,7 @@ export default {
     methods: {
         emitChange () {
             let department = keyBy(this.departments, 'id')[this.selected]
-            bus.$emit(events.changeDepartment.name, {
+            bus.$emit(events.changeDepartment.withID(this.id), {
                 department
             })
         }

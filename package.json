@@ -12,6 +12,7 @@
     "test": "npm run unit"
   },
   "dependencies": {
+    "lodash": "^4.17.4",
     "vue": "^2.4.2"
   },
   "devDependencies": {
@@ -51,7 +52,6 @@
     "karma-spec-reporter": "0.0.30",
     "karma-webpack": "^2.0.4",
     "loader-utils": "^1.1.0",
-    "lodash": "^4.17.4",
     "lolex": "^1.5.2",
     "mocha": "^3.2.0",
     "node-sass": "^4.5.3",

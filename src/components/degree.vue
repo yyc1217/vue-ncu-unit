@@ -19,6 +19,7 @@ import { keyBy } from 'lodash'
 
 import degrees from '../data/degrees'
 import bus, { events } from './event-bus'
+import { degreeID } from './default-id'
 import mixin from './mixin'
 
 export default {
@@ -27,7 +28,7 @@ export default {
         defaults: String,
         id: {
             type: String,
-            default: 'ncu-unit--degree'
+            default: degreeID
         }
     },
 
@@ -45,7 +46,7 @@ export default {
     methods: {
         emitChange () {
             let degree = keyBy(this.degrees, 'id')[this.selected]
-            bus.$emit(events.changeDegree.name, {
+            bus.$emit(events.changeDegree.withID(this.id), {
                 degree
             })
         }

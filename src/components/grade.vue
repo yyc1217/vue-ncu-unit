@@ -17,6 +17,7 @@
 
 import degrees from '../data/degrees'
 import bus, { events } from './event-bus'
+import { gradeID, degreeID } from './default-id'
 
 import mixin from './mixin'
 
@@ -25,12 +26,16 @@ export default {
     props: {
         id: {
             type: String,
-            default: 'ncu-unit--grade'
+            default: gradeID
         },
         defaults: String,
         degree: {
             type: String,
             required: true
+        },
+        listenToDegree: {
+            type: String,
+            default: degreeID
         }
     },
 
@@ -58,7 +63,7 @@ export default {
     },
 
     created () {
-        bus.$on(events.changeDegree.name, (data) => {
+        bus.$on(events.changeDegree.withID(this.listenToDegree), (data) => {
             this.degree_id = data.degree.id
         })
     }

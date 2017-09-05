@@ -17,6 +17,7 @@ import { keyBy } from 'lodash'
 import degrees from '../data/degrees'
 import colleges from '../data/colleges'
 import departments from '../data/departments'
+import { transID } from './default-id'
 
 import mixin from './mixin'
 
@@ -25,7 +26,7 @@ export default {
     props: {
         id: {
             type: String,
-            default: 'ncu-unit--trans'
+            default: transID
         },
         type: String,
         transId: {

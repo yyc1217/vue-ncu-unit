@@ -5,6 +5,7 @@ import { getComponent, bus } from './common'
 import component from '@/components/grade.vue'
 import degrees from '@/data/degrees'
 import { events } from '@/components/event-bus'
+import { degreeID } from '@/components/default-id'
 
 let test = (degree, index, array) => {
   let defaults = random(2, degree.study_year).toString()
@@ -27,7 +28,7 @@ let test = (degree, index, array) => {
   let nextDegreeIndex = (index + 1) % array.length
   let nextDegree = array[nextDegreeIndex]
   it(`當學位改為 ${nextDegree.chinese_name} 時，修業上限應從 ${degree.study_year} 年修改為 ${nextDegree.study_year} 年`, (done) => {
-    bus.$emit(events.changeDegree.name, {
+    bus.$emit(events.changeDegree.withID(degreeID), {
       degree: nextDegree
     })
 
