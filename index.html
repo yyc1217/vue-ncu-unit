@@ -23,17 +23,19 @@
         <div class="nine columns">
           <pre><code class="javascript hljs">
   import Vue from 'vue'
-  import { College, Degree, Department, Grade, Trans } from 'vue-ncu-unit'
+  import components from 'vue-ncu-unit'
 
   new Vue({
     el: '#app',
     components: {
-      College,
-      Degree,
-      Department,
-      Grade,
-      Trans
+      college: components.College,
+      degree: components.Degree,
+      department: components.Department,
+      grade: components.Grade,
+      trans: components.Trans
     }
+    // or in es2015...
+    components
   })
           </code></pre>
         </div>
@@ -91,14 +93,16 @@
         <div class="three columns">
           <h4 class="subtitle" id="年級"><a href="#年級" class="bookmark">#</a> 年級</h4>
           <degree defaults="碩士班" id="demo-degree-4"></degree>
-          <grade degree="碩士班" defaults="3" id="demo-grade-4"></grade>
+          <grade degree="碩士班" defaults="3" id="demo-grade-4" listen-to-degree="demo-degree-4"></grade>
           <p><small>年級無法單獨存在，一定要給予學級才能決定修業上限。</small></p>
         </div>
 
         <div class="nine columns">
           <pre><code class="html hljs">
-&lt;degree defaults=&quot;碩士班&quot;&gt;&lt;/degree&gt;
-&lt;grade degree=&quot;碩士班&quot; defaults=&quot;3&quot;&gt;&lt;/degree&gt;
+&lt;degree defaults=&quot;碩士班&quot; id=&quot;demo-degree&quot;&gt;&lt;/degree&gt;
+&lt;grade degree=&quot;碩士班&quot;
+          defaults=&quot;3&quot;
+          listen-to-degree=&quot;demo-degree&quot;&gt;&lt;/grade&gt;
             </code>
           </pre>
         </div>
@@ -107,14 +111,21 @@
       <div class="row">
         <div class="three columns">
           <h4 class="subtitle" id="事件"><a href="#事件" class="bookmark">#</a> 事件</h4>
-          <degree defaults="學士班" id="demo-degree-5"></degree>
-          <p>demoCallback: <code></code></p>
+          <degree defaults="博士班" id="demo-degree-5"></degree>
+          <p>demoCallback: <code id="demoCallback"></code></p>
           <p><small>若有在 parent 的 data 給予 bus 參數作為事件的 emitter ，則 components 下的每個 component 會分別 emit<code>change</code>事件，並送出一個更新後的值<code>value</code>；可使用<code>$on</code>來接收。</small><p>
         </div>
 
         <div class="nine columns">
           <pre><code class="javascript hljs">
-暫時空白
+import { bus, events } from '../'
+
+let event = events.changeDegree.withID('demo-degree')
+// event = 'changeDegree:demo-degree'
+
+bus.$on(event, function (data) {
+  document.getElementById('demoCallback').textContent = data.degree.id
+})
           </code></pre>
         </div>
       </div>
@@ -207,7 +218,7 @@
                       listen-to-degree="demo-degree-8"
                       listen-to-college="demo-college-8"
                       id="demo-department-8"></department>
-          <grade degree="博士班" defaults="3" locale="en" id="demo-grade-8" list-to-degree="demo-degree-8"></grade>
+          <grade degree="博士班" defaults="3" locale="en" id="demo-grade-8" listen-to-degree="demo-degree-8"></grade>
         </div>
 
         <div class="nine columns">

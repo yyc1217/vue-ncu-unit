@@ -5,10 +5,11 @@ import { Enum } from 'enumify'
 export default new Vue()
 
 class Event extends Enum {
-  withID (id = 'This should not be empty') {
-    return this.name + ':' + id
+  withID (targetID = 'This should not be empty') {
+    return this.name + ':' + targetID
   }
 }
+
 Event.initEnum([
   'changeCollege',
   'changeDegree',

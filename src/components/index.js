@@ -1,0 +1,5 @@
+exports.College = require('./college.vue')
+exports.Department = require('./department.vue')
+exports.Degree = require('./degree.vue')
+exports.Grade = require('./grade.vue')
+exports.Trans = require('./trans.vue')
