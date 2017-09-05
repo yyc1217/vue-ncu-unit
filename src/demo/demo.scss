@@ -37,6 +37,11 @@ table td, table th {
     text-align: center;
 }
 
+.row {
+    border-bottom: grey 1px solid;
+    padding-bottom: 15px;
+}
+
 .ncu-unit {
     width: 100%;
     box-sizing: border-box;
@@ -59,7 +64,7 @@ table td, table th {
         color: dimgrey;
     }
     &.ncu-unit--grade {
-        background-color: lightskyblue;
-        color: dimgrey;       
+        background-color: limegreen;
+        color: purple;       
     }
 }
