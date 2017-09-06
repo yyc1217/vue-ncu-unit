@@ -28,7 +28,10 @@ export default {
             type: String,
             default: gradeID
         },
-        defaults: String,
+        defaults: {
+            type: String,
+            default: '1'
+        },
         degree: {
             type: String,
             required: true
@@ -62,10 +65,18 @@ export default {
         }
     },
 
-    created () {
-        bus.$on(events.changeDegree.withID(this.listenToDegree), (data) => {
-            this.degree_id = data.degree.id
-        })
+    methods: {
+        emitChange () {
+            bus.$emit(events.changeGrade.withID(this.id), {
+                grade: this.grade
+            })
+        },
+
+        afterMounted () {
+            bus.$on(events.changeDegree.withID(this.listenToDegree), (data) => {
+                this.degree_id = data.degree.id
+            })
+        }
     }
 }
 

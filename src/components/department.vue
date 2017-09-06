@@ -62,19 +62,8 @@ export default {
         }
     },
 
-    created () {
-        bus.$on(events.changeCollege.withID(this.listenToCollege), (data) => {
-            this.filter.college = data.college.id
-        });
-
-        bus.$on(events.changeDegree.withID(this.listenToDegree), (data) => {
-            this.filter.degree = data.degree.id
-        });
-    },
-
     computed: {
         filtered () {
-
             let degree = degrees.filter((degree) => degree.id === this.filter.degree)[0]
             let study_system_no = degree && degree.study_system_no || -1
 
@@ -96,6 +85,16 @@ export default {
             bus.$emit(events.changeDepartment.withID(this.id), {
                 department
             })
+        },
+
+        afterMounted () {
+            bus.$on(events.changeCollege.withID(this.listenToCollege), (data) => {
+                this.filter.college = data.college.id
+            });
+
+            bus.$on(events.changeDegree.withID(this.listenToDegree), (data) => {
+                this.filter.degree = data.degree.id
+            });
         }
     }
 }

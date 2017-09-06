@@ -25,7 +25,10 @@ import mixin from './mixin'
 export default {
 
     props: {
-        defaults: String,
+        defaults: {
+            type: String,
+            default: colleges[0].id
+        },
         id: {
             type: String,
             default: collegeID

@@ -34,5 +34,15 @@ export default {
 
       throw new Error(`obj ${JSON.stringify(obj)} 沒有 ${property} 也沒有 ${fallbackProperty}`)
     }
+  },
+
+  mounted () {
+    if (typeof this.emitChange === 'function') {
+      this.emitChange()
+    }
+
+    if (typeof this.afterMounted === 'function') {
+      this.afterMounted()
+    }
   }
 }

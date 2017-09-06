@@ -13,7 +13,8 @@ class Event extends Enum {
 Event.initEnum([
   'changeCollege',
   'changeDegree',
-  'changeDepartment'
+  'changeDepartment',
+  'changeGrade'
 ])
 
 export const events = Event

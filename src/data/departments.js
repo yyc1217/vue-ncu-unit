@@ -597,7 +597,7 @@ module.exports = [
   }, {
     'id': 3905,
     'chinese_name': '機械工程學系資通產業研發碩士專班',
-    'english_name': '',
+    'english_name': '機械工程學系資通產業',
     'study_system_no': 9,
     'parent_id': 3003,
     'college': '工學院'
@@ -779,7 +779,7 @@ module.exports = [
   }, {
     'id': 4310,
     'chinese_name': '會計研究所企業資源規劃會計碩士在職專班',
-    'english_name': '',
+    'english_name': '會計研究所企業資源規劃會計碩士在職專班',
     'study_system_no': 3,
     'parent_id': 4210,
     'college': '管理學院'
@@ -975,7 +975,7 @@ module.exports = [
   }, {
     'id': 5903,
     'chinese_name': '電機工程學系通訊暨微波半導體製程研發產業研發碩士專班',
-    'english_name': '',
+    'english_name': '電機工程學系通訊暨微波半導體製程研發產業研發碩士專班',
     'study_system_no': 9,
     'parent_id': 5001,
     'college': '資訊電機學院'
