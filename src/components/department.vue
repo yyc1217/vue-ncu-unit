@@ -7,7 +7,7 @@
         v-on:change="emitChange">
 
     <option v-for="department in filtered"
-            v-bind:value="department.chinese_name"
+            v-bind:value="department.id"
             v-bind:key="department.id + department.chinese_name">{{ $t(department, 'name') }}</option>
 
 </select>
@@ -90,11 +90,18 @@ export default {
         afterMounted () {
             bus.$on(events.changeCollege.withID(this.listenToCollege), (data) => {
                 this.filter.college = data.college.id
+                this.resetSelected()
             });
 
             bus.$on(events.changeDegree.withID(this.listenToDegree), (data) => {
                 this.filter.degree = data.degree.id
+                this.resetSelected()
             });
+        },
+
+        resetSelected () {
+            let filtered = this.filtered
+            this.selected = filtered.length == 0 ? '' : filtered[0].id
         }
     }
 }
