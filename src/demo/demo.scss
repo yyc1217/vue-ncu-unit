@@ -44,6 +44,11 @@ table.text-right td {
 .row {
     border-bottom: grey 1px solid;
     padding-bottom: 15px;
+
+    &.separator {
+        padding-bottom: 0;
+        padding-top: 15px;
+    }
 }
 
 .ncu-unit {
