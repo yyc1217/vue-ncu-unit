@@ -209,10 +209,10 @@ bus.$on(event, function (data) {
           <degree defaults="博士班" locale="en" id="demo-degree-8"></degree>
           <college defaults="工學院" locale="en" id="demo-college-8"></college>
           <department locale="en"
-                      defaults="環境工程研究所"
+                      defaults="3406"
                       :filtering="{
                                       college: '工學院',
-                                      degree: '碩士班'
+                                      degree: '博士班'
                                     }"
                       listen-to-degree="demo-degree-8"
                       listen-to-college="demo-college-8"
@@ -225,15 +225,53 @@ bus.$on(event, function (data) {
 &lt;degree defaults=&quot;博士班&quot; locale=&quot;en&quot;&gt;&lt;/degree&gt;
 &lt;college defaults=&quot;工學院&quot; locale=&quot;en&quot;&gt;&lt;/college&gt;
 &lt;department locale=&quot;en&quot;
-            defaults=&quot;環境工程研究所&quot;
+            defaults=&quot;3406&quot;
             :filtering=&quot;{
                             college: '工學院',
-                            degree: '碩士班'
+                            degree: '博士班'
                           }&quot;
             &lt;/department&gt;
 &lt;grade degree=&quot;博士班&quot; defaults=&quot;3&quot; locale=&quot;en&quot;&lt;/grade&gt;
           </code></pre>
         </div>
+      </div>
+
+      <div class="row">
+          <div class="three columns">
+            <h4 class="subtitle">id轉文字</h4>
+            <table class="u-full-width text-right">
+              <tbody>
+                <tr>
+                  <td><trans type="degree" trans-id="博士班"></trans></td>
+                </tr>
+                <tr>
+                  <td><trans type="degree" trans-id="博士班" locale="en"></trans></td>
+                </tr>
+                <tr>
+                  <td><trans type="college" trans-id="工學院"></trans></td>
+                </tr>
+                <tr>
+                  <td><trans type="college" trans-id="工學院" locale="en"></trans></td>
+                </tr>
+                <tr>
+                  <td><trans type="department" trans-id="3406"></trans></td>
+                </tr>
+                <tr>
+                  <td><trans type="department" trans-id="3406" locale="en"></trans></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="nine columns">
+              <pre><code class="html hljs">
+&lt;trans type=&quot;degree&quot; trans-id=&quot;博士班&quot;&gt;&lt;/trans&gt;
+&lt;trans type=&quot;degree&quot; trans-id=&quot;博士班&quot; locale=&quot;en&quot;&gt;&lt;/trans&gt;
+&lt;trans type=&quot;college&quot; trans-id=&quot;工學院&quot;&gt;&lt;/trans&gt;
+&lt;trans type=&quot;college&quot; trans-id=&quot;工學院&quot; locale=&quot;en&quot;&gt;&lt;/trans&gt;
+&lt;trans type=&quot;department&quot; trans-id=&quot;3406&quot;&gt;&lt;/trans&gt;
+&lt;trans type=&quot;department&quot; trans-id=&quot;3406&quot; locale=&quot;en&quot;&gt;&lt;/trans&gt;
+              </code></pre>
+            </div>
       </div>
 
     <div class="row">
