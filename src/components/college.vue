@@ -2,6 +2,7 @@
 
 <select class="ncu-unit ncu-unit--college"
         v-bind:id="id"
+        v-bind:name="name"
         v-bind:title="$t(i18n.college, 'name')"
         v-model="selected"
         v-on:change="emitChange">
@@ -32,6 +33,10 @@ export default {
         id: {
             type: String,
             default: collegeID
+        },
+        name: {
+            type: String,
+            default: 'college'
         }
     },
 

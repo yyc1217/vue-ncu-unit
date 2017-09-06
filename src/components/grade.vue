@@ -2,6 +2,7 @@
 
 <select class="ncu-unit ncu-unit--grade"
         v-bind:id="id"
+        v-bind:name="name"
         v-bind:title="$t(i18n.grade, 'name')"
         v-model="grade">
 
@@ -27,6 +28,10 @@ export default {
         id: {
             type: String,
             default: gradeID
+        },
+        name: {
+            type: String,
+            default: 'grade'
         },
         defaults: {
             type: String,

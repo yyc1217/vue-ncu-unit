@@ -275,8 +275,238 @@ bus.$on(event, function (data) {
       </div>
 
     <div class="row">
+      <div class="three columns">
+        <h4 class="subtitle subtitle--left" id="degree.vue"><a href="#degree.vue" class="bookmark">#</a> degree.vue</h4>
+      </div>
+
+      <div class="nine columns">
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>props</th>
+              <th>預設值</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>defaults</th>
+              <td><code>學士班</code></td>
+              <td>第一筆資料</td>
+            </tr>
+            <tr>
+              <th>id</th>
+              <td><code>ncu-unit--degree</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>class</th>
+              <td><code>ncu-unit</code><code>ncu-unit--degree</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>name</th>
+              <td><code>degree</code></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>  
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="three columns">
+          <h4 class="subtitle subtitle--left" id="college.vue"><a href="#college.vue" class="bookmark">#</a> college.vue</h4>
+        </div>
+  
+        <div class="nine columns">
+          <table class="u-full-width">
+            <thead>
+              <tr>
+                <th>props</th>
+                <th>預設值</th>
+                <th>說明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>defaults</th>
+                <td><code>中心、處室</code></td>
+                <td>第一筆資料</td>
+              </tr>
+              <tr>
+                <th>id</th>
+                <td><code>ncu-unit--college</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>class</th>
+                <td><code>ncu-unit</code><code>ncu-unit--college</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>name</th>
+                <td><code>college</code></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>  
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="three columns">
+          <h4 class="subtitle subtitle--left" id="department.vue"><a href="#department.vue" class="bookmark">#</a> department.vue</h4>
+        </div>
+  
+        <div class="nine columns">
+          <table class="u-full-width">
+            <thead>
+              <tr>
+                <th>props</th>
+                <th>預設值</th>
+                <th>說明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>defaults</th>
+                <td><code>202</code></td>
+                <td>第一筆資料</td>
+              </tr>
+              <tr>
+                <th>id</th>
+                <td><code>ncu-unit--department</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>class</th>
+                <td><code>ncu-unit</code><code>ncu-unit--department</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>name</th>
+                <td><code>department</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>filtering</th>
+                <td><code>{
+                    college: undefined,
+                    degree: undefined
+                }</code></td>
+                <td>篩選條件：<br>college為學院資料的id<br>degree為學位資料的id</td>
+              </tr>
+              <tr>
+                  <th>listenToCollege</th>
+                  <td><code>ncu-unit--college</code></td>
+                  <td>欲篩選的 college.vue id</td>
+              </tr>
+              <tr>
+                  <th>listenToDegree</th>
+                  <td><code>ncu-unit--degree</code></td>
+                  <td>欲篩選的 degree.vue id</td>
+              </tr>
+            </tbody>
+          </table>  
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="three columns">
+          <h4 class="subtitle subtitle--left" id="grade.vue"><a href="#grade.vue" class="bookmark">#</a> grade.vue</h4>
+        </div>
+  
+        <div class="nine columns">
+          <table class="u-full-width">
+            <thead>
+              <tr>
+                <th>props</th>
+                <th>預設值</th>
+                <th>說明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>defaults</th>
+                <td><code>1</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>id</th>
+                <td><code>ncu-unit--grade</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>class</th>
+                <td><code>ncu-unit</code><code>ncu-unit--grade</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>name</th>
+                <td><code>grade</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>degree</th>
+                <td>N/A</td>
+                <td>學位，必填</td>
+              </tr>
+              <tr>
+                <th>listenToDegree</th>
+                <td><code>ncu-unit--degree</code></td>
+                <td>欲篩選的 degree.vue id</td>
+              </tr>
+            </tbody>
+          </table>  
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="three columns">
+          <h4 class="subtitle subtitle--left" id="trans.vue"><a href="#trans.vue" class="bookmark">#</a> trans.vue</h4>
+        </div>
+  
+        <div class="nine columns">
+          <table class="u-full-width">
+            <thead>
+              <tr>
+                <th>props</th>
+                <th>預設值</th>
+                <th>說明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>id</th>
+                <td><code>ncu-unit--trans</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>class</th>
+                <td><code>ncu-unit</code><code>ncu-unit--trans</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>type</th>
+                <td>N/A</td>
+                <td>
+                  欲轉譯的類型<br>
+                  需為<code>degree</code><code>college</code><code>department</code>其中之一<br>
+                  必填
+                </td>
+              </tr>
+              <tr>
+                <th>transId</th>
+                <td>N/A</td>
+                <td>欲轉譯的ID</td>
+              </tr>
+            </tbody>
+          </table>  
+        </div>
+    </div>
+
       <div class="twelve columns">
-        <h4 class="subtitle subtitle--left" id="props"><a href="#props" class="bookmark">#</a> props與預設值</h4>
         <table class="u-full-width">
           <thead>
             <tr>
@@ -287,78 +517,6 @@ bus.$on(event, function (data) {
               <th>說明</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th>value-locale</th>
-              <td><code>zh-tw</code></td>
-              <td><code>zh-tw</code></td>
-              <td><code>zh-tw</code></td>
-              <td><a href="https://github.com/yyc1217/twzipcode-data/blob/master/src/locales.js">locale.js</a></td>
-            </tr>
-            <tr>
-              <th>value-template</th>
-              <td><code>:id</code></td>
-              <td><code>:id</code></td>
-              <td><code>:id</code></td>
-              <td><a href="https://github.com/yyc1217/twzipcode-data#資料結構--data-structure">資料結構</a>
-            </tr>
-            <tr>
-              <th>text-locale</th>
-              <td><code>zh-tw</code></td>
-              <td><code>zh-tw</code></td>
-              <td><code>zh-tw</code></td>
-              <td><a href="https://github.com/yyc1217/twzipcode-data/blob/master/src/locales.js">locale.js</a></td>
-            </tr>
-            <tr>
-              <th>text-template</th>
-              <td><code>:id</code></td>
-              <td><code>:id :county :city</code></td>
-              <td><code>:city</code></td>
-              <td><a href="https://github.com/yyc1217/twzipcode-data#資料結構--data-structure">資料結構</a>
-            </tr>
-            <tr>
-              <th>id</th>
-              <td><code>twzipcode__county</code></td>
-              <td><code>twzipcode__zipcode</code></td>
-              <td><code>twzipcode__zipcode--groupby</code></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>class</th>
-              <td><code>twzipcode</code><code>twzipcode__county</code></td>
-              <td><code>twzipcode</code><code>twzipcode__zipcode</code></td>
-              <td><code>twzipcode</code><code>twzipcode__zipcode</code><br><code>twzipcode__zipcode--groupby</code></td>
-              <td>若有指定其他 className ，則會附加在預設值後面。</td>
-            </tr>
-            <tr>
-              <th>name</th>
-              <td><code>county</code></td>
-              <td><code>zipcode</code></td>
-              <td><code>zipcode</code></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>selected</th>
-              <td>第一筆資料</td>
-              <td>第一筆資料</td>
-              <td>第一筆資料</td>
-              <td>以 value 為準，若有更動 value 的格式，則需符合更改後格式。</td>
-            </tr>
-            <tr>
-              <th>listen-to-county</th>
-              <td>X</td>
-              <td><code>twzipcode__county</code></td>
-              <td>X</td>
-              <td>縣市<code>&lt;select&gt;</code>的 id ，按縣市篩選郵遞區號</td>
-            </tr>
-            <tr>
-              <th>filter-by-county</th>
-              <td>X</td>
-              <td><code>undefined</code></td>
-              <td>X</td>
-              <td>縣市的 id ，初始時要依哪個縣市篩選郵遞區號</td>
-            </tr>
-          </tbody>
           <tfoot>
             <tr>
               <th colspan="5"><small>如果要設定其他 attribute ，只需要按平常方式即可，例如<code>&lt;twzipcode-county size=&quot;10&quot; required&gt;&lt;/twzipcode-county&gt;</code></small></th>

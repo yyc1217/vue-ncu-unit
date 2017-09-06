@@ -2,6 +2,7 @@
 
 <select class="ncu-unit ncu-unit--department"
         v-bind:id="id"
+        v-bind:name="name"
         v-bind:title="$t(i18n.department, 'name')"
         v-model="selected"
         v-on:change="emitChange">
@@ -30,7 +31,14 @@ export default {
             type: String,
             default: departmentID
         },
-        defaults: String,
+        name: {
+            type: String,
+            default: 'department'
+        },
+        defaults: {
+            type: String,
+            default : departments[0].id
+        },
         filtering: {
             type: Object,
             default () {
