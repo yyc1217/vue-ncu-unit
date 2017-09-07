@@ -5,7 +5,7 @@ import { events } from '@/components/event-bus'
 
 testBasic({
   name: '系所',
-  defaults: '地球科學學系',
+  defaults: '6002',
   component,
   data,
   event: events.changeDepartment
