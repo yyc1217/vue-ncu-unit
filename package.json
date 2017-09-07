@@ -5,6 +5,8 @@
   "author": "Yeh-Yung <yyc1217@gmail.com>",
   "private": true,
   "scripts": {
+    "cover": "nyc mocha-webpack --webpack-config test/webpack.test.config.js test --recursive --require test/.setup",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
