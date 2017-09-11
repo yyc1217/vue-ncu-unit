@@ -1,4 +1,4 @@
-import bus1, { events as events1 } from '@/components/event-bus'
+import bus1, { events as events1 } from './components/event-bus'
 
 export default require('./components')
 
