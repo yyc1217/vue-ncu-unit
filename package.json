@@ -98,5 +98,19 @@
       "it",
       "beforeEach"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yyc1217/vue-ncu-unit.git"
+  },
+  "keywords": [
+    "Vue",
+    "component",
+    "中央大學"
+  ],
+  "homepage": "https://github.com/yyc1217/vue-ncu-unit#readme",
+  "bugs": {
+    "url": "https://github.com/yyc1217/vue-ncu-unit/issues"
+  },
+  "license": "MIT"
 }
