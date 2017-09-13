@@ -4,7 +4,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
-    demo: './src/demo/demo.js'
+    demo: './src/demo/demo.js',
+    components: './src/index.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -58,7 +59,12 @@ module.exports = {
   devtool: '#eval-source-map',
   node: {
     fs: 'empty'
-  }
+  },
+  externals: {
+    vue: 'vue',
+    lodash: 'lodash',
+    enumify: 'enumify'
+  },
 }
 
 if (process.env.NODE_ENV === 'production') {
