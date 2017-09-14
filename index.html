@@ -392,8 +392,8 @@ bus.$on(event, function (data) {
               <tr>
                 <th>filtering</th>
                 <td><code>{
-                    college: undefined,
-                    degree: undefined
+                    college: // 第一筆 college 的 id,
+                    degree: // 第一筆 grade 的 id
                 }</code></td>
                 <td>篩選條件：<br>college為學院資料的id<br>degree為學位資料的id</td>
               </tr>
@@ -450,8 +450,8 @@ bus.$on(event, function (data) {
               </tr>
               <tr>
                 <th>degree</th>
-                <td>N/A</td>
-                <td>學位，必填</td>
+                <td>第一筆 degree 的 id</td>
+                <td>學位</td>
               </tr>
               <tr>
                 <th>listenToDegree</th>
