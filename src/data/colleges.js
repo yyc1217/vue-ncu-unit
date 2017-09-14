@@ -1,10 +1,5 @@
 module.exports = [
   {
-    'id': '中心、處室',
-    'chinese_name': '中心、處室',
-    'english_name': 'Centres and Institues'
-  },
-  {
     'id': '文學院',
     'chinese_name': '文學院',
     'english_name': 'College of Liberal Arts'
@@ -43,5 +38,10 @@ module.exports = [
     'id': '生醫理工學院',
     'chinese_name': '生醫理工學院',
     'english_name': 'College of Health Sciences and Technology'
-  }
+  },
+  {
+    'id': '中心、處室',
+    'chinese_name': '中心、處室',
+    'english_name': 'Centres and Institues'
+  },
 ]

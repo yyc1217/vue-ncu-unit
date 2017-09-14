@@ -39,7 +39,7 @@ export default {
         },
         degree: {
             type: String,
-            required: true
+            default: degrees[0].id
         },
         listenToDegree: {
             type: String,

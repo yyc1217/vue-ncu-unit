@@ -19,6 +19,7 @@
 import { keyBy } from 'lodash'
 
 import degrees from '../data/degrees'
+import colleges from '../data/colleges'
 import departments from '../data/departments'
 import bus, { events } from './event-bus'
 import { departmentID, collegeID, degreeID } from './default-id'
@@ -43,8 +44,8 @@ export default {
             type: Object,
             default () {
                 return {
-                    college: undefined,
-                    degree: undefined
+                    college: colleges[0].id,
+                    degree: degrees[0].id
                 }
             }
         },

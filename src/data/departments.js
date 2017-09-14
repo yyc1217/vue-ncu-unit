@@ -1,19 +1,5 @@
 module.exports = [
-  {
-    'id': 202,
-    'chinese_name': '遙測科技碩士學位學程',
-    'english_name': 'Master of Science Program in Remote Sensing Science and Technology',
-    'study_system_no': 2,
-    'parent_id': 202,
-    'college': '中心、處室'
-  }, {
-    'id': 403,
-    'chinese_name': '環境科技博士學位學程(台灣聯合大學系統)',
-    'english_name': 'International Ph.D. Program in Environmental Science and Technology(UST-EST)',
-    'study_system_no': 4,
-    'parent_id': 403,
-    'college': '中心、處室'
-  }, {
+ {
     'id': 1001,
     'chinese_name': '中國文學系',
     'english_name': 'Department of Chinese Literature',
@@ -1266,5 +1252,20 @@ module.exports = [
     'study_system_no': 4,
     'parent_id': 8211,
     'college': '生醫理工學院'
+  },
+  {
+    'id': 202,
+    'chinese_name': '遙測科技碩士學位學程',
+    'english_name': 'Master of Science Program in Remote Sensing Science and Technology',
+    'study_system_no': 2,
+    'parent_id': 202,
+    'college': '中心、處室'
+  }, {
+    'id': 403,
+    'chinese_name': '環境科技博士學位學程(台灣聯合大學系統)',
+    'english_name': 'International Ph.D. Program in Environmental Science and Technology(UST-EST)',
+    'study_system_no': 4,
+    'parent_id': 403,
+    'college': '中心、處室'
   }
 ]

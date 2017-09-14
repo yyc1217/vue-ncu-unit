@@ -95,7 +95,7 @@
           <h4 class="subtitle" id="年級"><a href="#年級" class="bookmark">#</a> 年級</h4>
           <degree defaults="碩士班" id="demo-degree-4"></degree>
           <grade degree="碩士班" defaults="3" id="demo-grade-4" listen-to-degree="demo-degree-4"></grade>
-          <p><small>年級無法單獨存在，一定要給予學級才能決定修業上限。</small></p>
+          <p><small>年級若單獨存在，則預設為學士班的修業上限。</small></p>
         </div>
 
         <div class="nine columns">
@@ -133,28 +133,18 @@ bus.$on(event, function (data) {
      <div class="row">
         <div class="three columns">
           <h4 class="subtitle" id="篩選系所"><a href="#篩選系所" class="bookmark">#</a> 篩選系所</h4>
-          <degree defaults="碩士班" id="demo-degree-6"></degree>
-          <college defaults="工學院" id="demo-college-6"></college>
-          <department defaults="3206"
-                      :filtering="{
-                                      college: '工學院',
-                                      degree: '碩士班'
-                                    }"
-                      listen-to-degree="demo-degree-6"
+          <degree id="demo-degree-6"></degree>
+          <college id="demo-college-6"></college>
+          <department listen-to-degree="demo-degree-6"
                       listen-to-college="demo-college-6"
                       id="demo-department-6"></department>
         </div>
 
         <div class="nine columns">
           <pre><code class="html hljs">
-&lt;degree defaults=&quot;碩士班&quot; id=&quot;demo-degree&quot;&gt;&lt;/degree&gt;
-&lt;college defaults=&quot;工學院&quot; id=&quot;demo-college&quot;&gt;&lt;/college&gt;
-&lt;department defaults=&quot;3206&quot;
-            :filtering=&quot;{
-                            college: '工學院',
-                            degree: '碩士班'
-                          }&quot;
-            listen-to-degree=&quot;demo-degree&quot;
+&lt;degree id=&quot;demo-degree&quot;&gt;&lt;/degree&gt;
+&lt;college id=&quot;demo-college&quot;&gt;&lt;/college&gt;
+&lt;department listen-to-degree=&quot;demo-degree&quot;
             listen-to-college=&quot;demo-college&quot;&lt;/department&gt;
           </code></pre>
         </div>
