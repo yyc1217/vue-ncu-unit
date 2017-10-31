@@ -49,23 +49,39 @@ let testBasic = ({ name, data, defaults, component, event }) => {
 }
 export { testBasic }
 
-let testExclude = ({ name, component, data, excludes }) => {
-  describe(`排除${name}`, () => {
+let testExcept = ({ name, component, data, except }) => {
+  describe(`${name}排除`, () => {
     let c
     beforeEach(() => {
       c = getComponent(component, {
-        excludes
+        except
       })
     })
 
-    let expected = data.length - excludes.length
-    it(`應該載入 ${expected} 個選項，排除 ${excludes.length} 個選項`, () => {
+    let expected = data.length - except.length
+    it(`應該排除 ${except.length} 個選項，僅剩 ${expected} 個選項`, () => {
       c.element.options.length.should.eql(expected)
     })
   })
-
 }
-export { testExclude }
+export { testExcept }
+
+let testOnly = ({ name, component, data, only }) => {
+  describe(`${name}僅剩`, () => {
+    let c
+    beforeEach(() => {
+      c = getComponent(component, {
+        only
+      })
+    })
+
+    let left = data.length - only.length
+    it(`應該僅剩 ${only.length} 個選項，排除 ${left} 個選項`, () => {
+      c.element.options.length.should.eql(only.length)
+    })
+  })
+}
+export { testOnly }
 
 let testLocale = ({ component, defaults, data, property }) => {
   describe('語系', () => {

@@ -64,13 +64,12 @@ export default {
     ],
 
     data () {
-        this.excludes.sort()
+        this.except.sort()
 
         return {
             departments,
             selected: this.defaults,
             filter: this.filtering,
-            selfExcludes: this.excludes,
         }
     },
 
@@ -79,20 +78,27 @@ export default {
             let degree = degrees.filter((degree) => degree.id === this.filter.degree)[0]
             let study_system_no = degree && degree.study_system_no || -1
 
-            return this.departments
+            let results = this.departments
 
-                    .filter((department) => {
-                        return this.filter.college === undefined || department.college === this.filter.college
-                    })
+                             .filter((department) => {
+                                 return this.filter.college === undefined || department.college === this.filter.college
+                             })
 
-                    .filter((department) => {
-                        return this.filter.degree === undefined || department.study_system_no == study_system_no
-                    })
+                             .filter((department) => {
+                                 return this.filter.degree === undefined || department.study_system_no == study_system_no
+                             })
 
-                    .filter((department) => {
-                        return !this.selfExcludes.includes(department.id)
-                    })
+                             .filter((department) => {
+                                return !this.except.includes(department.id)
+                             })
 
+            if (this.only.length !== 0) {
+                results = results.filter((department) => {
+                                    return this.only.includes(department.id)
+                                 })
+            }
+
+            return results
         }
     },
 
