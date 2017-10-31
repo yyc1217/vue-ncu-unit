@@ -64,10 +64,13 @@ export default {
     ],
 
     data () {
+        this.excludes.sort()
+
         return {
             departments,
             selected: this.defaults,
-            filter: this.filtering
+            filter: this.filtering,
+            selfExcludes: this.excludes,
         }
     },
 
@@ -85,6 +88,11 @@ export default {
                     .filter((department) => {
                         return this.filter.degree === undefined || department.study_system_no == study_system_no
                     })
+
+                    .filter((department) => {
+                        return !this.selfExcludes.includes(department.id)
+                    })
+
         }
     },
 

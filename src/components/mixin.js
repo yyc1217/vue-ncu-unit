@@ -11,6 +11,10 @@ export default {
     i18n: {
       type: Object,
       default: () => i18n
+    },
+    excludes: {
+      type: Array,
+      default: () => []
     }
   },
 

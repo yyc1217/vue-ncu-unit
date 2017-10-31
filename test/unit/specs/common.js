@@ -49,6 +49,24 @@ let testBasic = ({ name, data, defaults, component, event }) => {
 }
 export { testBasic }
 
+let testExclude = ({ name, component, data, excludes }) => {
+  describe(`排除${name}`, () => {
+    let c
+    beforeEach(() => {
+      c = getComponent(component, {
+        excludes
+      })
+    })
+
+    let expected = data.length - excludes.length
+    it(`應該載入 ${expected} 個選項，排除 ${excludes.length} 個選項`, () => {
+      c.element.options.length.should.eql(expected)
+    })
+  })
+
+}
+export { testExclude }
+
 let testLocale = ({ component, defaults, data, property }) => {
   describe('語系', () => {
     locales.forEach((locale) => {
