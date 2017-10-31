@@ -130,9 +130,49 @@ bus.$on(event, function (data) {
         </div>
       </div>
 
+      <div class="row">
+        <div class="three columns">
+          <h4 class="subtitle" id="參數篩選系所"><a href="#參數篩選系所" class="bookmark">#</a> 參數篩選系所</h4>
+            <span>排除 <code>except</code></span>
+            <department id="demo-department-9"
+                        defaults="3206"
+                        :filtering="{
+                          college: '工學院',
+                          degree: '碩士班'
+                        }"
+                        :except="[3201, 3202, 3203, 3204]"></department>
+            <span>僅剩 <code>only</code></span>
+            <department id="demo-department-10"
+                        defaults="3206"
+                        :filtering="{
+                          college: '工學院',
+                          degree: '碩士班'
+                        }"
+                        :only="[3206, 3208, 3209]"></department>
+            <p>若ID同時出現在<code>except</code>和<code>only</code>，則先作<code>except</code>再作<code>only</code></p>
+        </div>
+        <div class="nine columns">
+          <pre><code class="html hljs">
+&lt;department defaults=&quot;3206&quot;
+           :filtering=&quot;{
+              college: '工學院',
+              degree: '碩士班'
+            }&quot;
+           :except=&quot;[3201, 3202, 3203, 3204]&quot;&gt;&lt;/department&gt;
+
+&lt;department defaults=&quot;3206&quot;
+            :filtering=&quot;{
+              college: '工學院',
+              degree: '碩士班'
+            }&quot;
+            :only=&quot;[3206, 3208, 3209]&quot;&gt;
+            </code></pre>
+        </div>
+      </div>
+
      <div class="row">
         <div class="three columns">
-          <h4 class="subtitle" id="篩選系所"><a href="#篩選系所" class="bookmark">#</a> 篩選系所</h4>
+          <h4 class="subtitle" id="連動篩選系所"><a href="#連動篩選系所" class="bookmark">#</a> 連動篩選系所</h4>
           <degree id="demo-degree-6"></degree>
           <college id="demo-college-6"></college>
           <department listen-to-degree="demo-degree-6"
@@ -398,14 +438,24 @@ bus.$on(event, function (data) {
                 <td>篩選條件：<br>college為學院資料的id<br>degree為學位資料的id</td>
               </tr>
               <tr>
+                  <th>except</th>
+                  <td><code>[]</code></td>
+                  <td>欲排除的系所 id 陣列</td>
+              </tr>
+              <tr>
+                  <th>only</th>
+                  <td><code>[]</code></td>
+                  <td>欲剩下的系所 id 陣列</td>
+              </tr>
+              <tr>
                   <th>listenToCollege</th>
                   <td><code>ncu-unit--college</code></td>
-                  <td>欲篩選的 college.vue id</td>
+                  <td>欲連動篩選的 college.vue id</td>
               </tr>
               <tr>
                   <th>listenToDegree</th>
                   <td><code>ncu-unit--degree</code></td>
-                  <td>欲篩選的 degree.vue id</td>
+                  <td>欲連動篩選的 degree.vue id</td>
               </tr>
             </tbody>
           </table>  
