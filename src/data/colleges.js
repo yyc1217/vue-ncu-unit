@@ -41,7 +41,7 @@ module.exports = [
   },
   {
     'id': '中心、處室',
-    'chinese_name': '中心、處室',
-    'english_name': 'Centres and Institues'
+    'chinese_name': '太空及遙測研究中心',
+    'english_name': 'Center of Space and Remote Sensing Research'
   },
 ]
