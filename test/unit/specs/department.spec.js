@@ -19,7 +19,7 @@ testBasic({
 })
 
 let except = [
-  1002, // 英美語文學系
+  10020, // 英美語文學系
 ]
 
 testExcept({
@@ -30,7 +30,7 @@ testExcept({
 })
 
 let only = [
-  1002, // 英美語文學系  
+  10020, // 英美語文學系  
 ]
 
 testOnly({
