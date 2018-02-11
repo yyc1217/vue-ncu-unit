@@ -58,7 +58,7 @@
      <div class="row">
         <div class="three columns">
           <h4 class="subtitle" id="系所"><a href="#系所" class="bookmark">#</a> 系所</h4>
-          <department defaults="3206"
+          <department defaults="32060"
                       :filtering="{
                                       college: '工學院',
                                       degree: '碩士班'
@@ -68,7 +68,7 @@
 
         <div class="nine columns">
             <pre><code class="html hljs">
-  &lt;department defaults=&quot;3206&quot;
+  &lt;department defaults=&quot;32060&quot;
               :filtering=&quot;{
                               college: '工學院',
                               degree: '碩士班'
@@ -135,37 +135,37 @@ bus.$on(event, function (data) {
           <h4 class="subtitle" id="參數篩選系所"><a href="#參數篩選系所" class="bookmark">#</a> 參數篩選系所</h4>
             <span>排除 <code>except</code></span>
             <department id="demo-department-9"
-                        defaults="3206"
+                        defaults="32060"
                         :filtering="{
                           college: '工學院',
                           degree: '碩士班'
                         }"
-                        :except="[3201, 3202, 3203, 3204]"></department>
+                        :except="[32010, 32020, 32030, 32040]"></department>
             <span>僅剩 <code>only</code></span>
             <department id="demo-department-10"
-                        defaults="3206"
+                        defaults="32060"
                         :filtering="{
                           college: '工學院',
                           degree: '碩士班'
                         }"
-                        :only="[3206, 3208, 3209]"></department>
+                        :only="[32060, 32080, 32090]"></department>
             <p>若ID同時出現在<code>except</code>和<code>only</code>，則先作<code>except</code>再作<code>only</code></p>
         </div>
         <div class="nine columns">
           <pre><code class="html hljs">
-&lt;department defaults=&quot;3206&quot;
+&lt;department defaults=&quot;32060&quot;
            :filtering=&quot;{
               college: '工學院',
               degree: '碩士班'
             }&quot;
-           :except=&quot;[3201, 3202, 3203, 3204]&quot;&gt;&lt;/department&gt;
+           :except=&quot;[32010, 32020, 32030, 32040]&quot;&gt;&lt;/department&gt;
 
-&lt;department defaults=&quot;3206&quot;
+&lt;department defaults=&quot;32060&quot;
             :filtering=&quot;{
               college: '工學院',
               degree: '碩士班'
             }&quot;
-            :only=&quot;[3206, 3208, 3209]&quot;&gt;
+            :only=&quot;[32060, 32080, 32090]&quot;&gt;
             </code></pre>
         </div>
       </div>
@@ -195,7 +195,7 @@ bus.$on(event, function (data) {
           <h4 class="subtitle" id="樣式"><a href="#樣式" class="bookmark">#</a> 樣式</h4>
           <degree class="demo" defaults="博士班" id="demo-degree-7"></degree>
           <college class="demo" defaults="工學院" id="demo-college-7"></college>
-          <department class="demo" defaults="3406"
+          <department class="demo" defaults="34060"
                       :filtering="{
                                       college: '工學院',
                                       degree: '博士班'
@@ -240,7 +240,7 @@ bus.$on(event, function (data) {
           <degree defaults="博士班" locale="en" id="demo-degree-8"></degree>
           <college defaults="工學院" locale="en" id="demo-college-8"></college>
           <department locale="en"
-                      defaults="3406"
+                      defaults="34060"
                       :filtering="{
                                       college: '工學院',
                                       degree: '博士班'
@@ -256,7 +256,7 @@ bus.$on(event, function (data) {
 &lt;degree defaults=&quot;博士班&quot; locale=&quot;en&quot;&gt;&lt;/degree&gt;
 &lt;college defaults=&quot;工學院&quot; locale=&quot;en&quot;&gt;&lt;/college&gt;
 &lt;department locale=&quot;en&quot;
-            defaults=&quot;3406&quot;
+            defaults=&quot;34060&quot;
             :filtering=&quot;{
                             college: '工學院',
                             degree: '博士班'
@@ -285,10 +285,10 @@ bus.$on(event, function (data) {
                   <td><trans type="college" trans-id="工學院" locale="en"></trans></td>
                 </tr>
                 <tr>
-                  <td><trans type="department" trans-id="3406"></trans></td>
+                  <td><trans type="department" trans-id="34060"></trans></td>
                 </tr>
                 <tr>
-                  <td><trans type="department" trans-id="3406" locale="en"></trans></td>
+                  <td><trans type="department" trans-id="34060" locale="en"></trans></td>
                 </tr>
               </tbody>
             </table>
@@ -299,8 +299,8 @@ bus.$on(event, function (data) {
 &lt;trans type=&quot;degree&quot; trans-id=&quot;博士班&quot; locale=&quot;en&quot;&gt;&lt;/trans&gt;
 &lt;trans type=&quot;college&quot; trans-id=&quot;工學院&quot;&gt;&lt;/trans&gt;
 &lt;trans type=&quot;college&quot; trans-id=&quot;工學院&quot; locale=&quot;en&quot;&gt;&lt;/trans&gt;
-&lt;trans type=&quot;department&quot; trans-id=&quot;3406&quot;&gt;&lt;/trans&gt;
-&lt;trans type=&quot;department&quot; trans-id=&quot;3406&quot; locale=&quot;en&quot;&gt;&lt;/trans&gt;
+&lt;trans type=&quot;department&quot; trans-id=&quot;34060&quot;&gt;&lt;/trans&gt;
+&lt;trans type=&quot;department&quot; trans-id=&quot;34060&quot; locale=&quot;en&quot;&gt;&lt;/trans&gt;
               </code></pre>
             </div>
       </div>
