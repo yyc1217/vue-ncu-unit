@@ -31,6 +31,10 @@ pre {
     & code {
         padding-left: 2em !important;
     }
+
+    &.one-line {
+        max-height: 80px;
+    }
 }
 
 table td, table th {

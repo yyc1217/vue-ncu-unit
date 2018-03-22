@@ -432,7 +432,7 @@ bus.$on(event, function (data) {
               <tr>
                 <th>filtering</th>
                 <td><code>{
-                    college: // 第一筆 college 的 id,
+                    college: // 第一筆 college 的 id,<br>
                     degree: // 第一筆 grade 的 id
                 }</code></td>
                 <td>篩選條件：<br>college為學院資料的id<br>degree為學位資料的id</td>
@@ -543,8 +543,7 @@ bus.$on(event, function (data) {
                 <th>type</th>
                 <td>N/A</td>
                 <td>
-                  欲轉譯的類型<br>
-                  需為<code>degree</code><code>college</code><code>department</code>其中之一<br>
+                  欲轉譯的類型需為<br><code>degree</code><br><code>college</code><br><code>department</code><br>其中之一<br>
                   必填
                 </td>
               </tr>
@@ -558,15 +557,43 @@ bus.$on(event, function (data) {
         </div>
     </div>
 
+    <div class="twelve columns">
+      <table class="u-full-width">
+        <tfoot>
+          <tr>
+            <th colspan="5"><small>如果要設定其他 attribute ，只需要按平常方式即可，例如<code>&lt;degree size=&quot;10&quot; required&gt;&lt;/degree&gt;</code></small></th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="row separator">
       <div class="twelve columns">
-        <table class="u-full-width">
-          <tfoot>
-            <tr>
-              <th colspan="5"><small>如果要設定其他 attribute ，只需要按平常方式即可，例如<code>&lt;degree size=&quot;10&quot; required&gt;&lt;/degree&gt;</code></small></th>
-            </tr>
-          </tfoot>
-        </table>
+         <h4 class="page-title">SQL</h4>
+         <h6 class="page-title">可將系所、學院資料匯入後端資料庫，以便其他運用。</h6>
+       </div>
+    </div>
+
+    <div class="row">
+      <div class="three columns">
+        <h4 class="subtitle subtitle--right" id="系所sql"><a href="#系所sql" class="bookmark">#</a> 系所</h4>
       </div>
+
+      <div class="nine columns">
+        <insertSql source="departments" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="three columns">
+        <h4 class="subtitle subtitle--right" id="學院sql"><a href="#學院sql" class="bookmark">#</a> 學院</h4>
+      </div>
+
+      <div class="nine columns">
+        <insertSql source="colleges"/>
+      </div>
+    </div>
+
     </div>
 
     <div class="row">
@@ -579,9 +606,7 @@ bus.$on(event, function (data) {
     </div>
     <!-- built files will be auto injected -->
     <script src="//cdn.jsdelivr.net/highlight.js/9.10.0/highlight.min.js"></script>
-    <script>
-      hljs.initHighlightingOnLoad();
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <script src="dist/demo.js"></script>
   </body>
 </html>
