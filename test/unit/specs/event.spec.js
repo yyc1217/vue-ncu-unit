@@ -30,7 +30,7 @@ let getStudySystemNo = (id) => {
 let filteredManually = ({ departments, degreeId, collegeId }) => {
   let studySystemNo = getStudySystemNo(degreeId)
   return departments.filter((department) => department.study_system_no === studySystemNo)
-                    .filter((department) => department.college === collegeId)
+                    .filter((department) => department.college_id === collegeId)
 }
 
 describe('Event', () => {

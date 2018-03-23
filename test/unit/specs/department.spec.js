@@ -7,7 +7,7 @@ const name = '系所'
 
 let filteredData = data.filter((dept) => {
   // 學士班 && 文學院
-  return dept.study_system_no == 1 && dept.college == '文學院'
+  return dept.study_system_no == 1 && dept.college_id == '文學院'
 })
 
 testBasic({

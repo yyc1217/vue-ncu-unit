@@ -81,7 +81,7 @@ export default {
             let results = this.departments
 
                              .filter((department) => {
-                                 return this.filter.college === undefined || department.college === this.filter.college
+                                 return this.filter.college === undefined || department.college_id === this.filter.college
                              })
 
                              .filter((department) => {
