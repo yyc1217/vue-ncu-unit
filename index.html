@@ -580,7 +580,24 @@ bus.$on(event, function (data) {
       </div>
 
       <div class="nine columns">
-        <insertSql source="departments" />
+        <pre><code class="hljs sql" id="department-sql-create-table">
+CREATE TABLE `departments` (
+    `id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `group_id` int(1) NOT NULL COMMENT '系所組代碼',
+    `chinese_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '中文名稱',
+    `english_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '英文名稱',
+    `study_system_no` int(1) NOT NULL COMMENT '學級代碼',
+    `parent_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '本系所組屬於哪個系所',
+    `college_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '屬於哪個學院',
+    `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    `deleted_at` int(11) DEFAULT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='系所'
+        </code></pre>
+        <br>
+        <button class="copyme u-pull-right" data-clipboard-target="#department-sql-create-table">Copy</button>
+        <br>
+        <insert-sql source="departments" />
       </div>
     </div>
 
@@ -590,7 +607,20 @@ bus.$on(event, function (data) {
       </div>
 
       <div class="nine columns">
-        <insertSql source="colleges"/>
+          <pre><code class="hljs sql" id="college-sql-create-table">
+CREATE TABLE `colleges` (
+  `id` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chinese_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '中文名稱',
+  `english_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '英文名稱',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='學院'               
+                      </code></pre>
+        <br>
+        <button class="copyme u-pull-right" data-clipboard-target="#college-sql-create-table">Copy</button>
+        <br>
+        <insert-sql source="colleges"/>
       </div>
     </div>
 
