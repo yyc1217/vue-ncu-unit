@@ -2,7 +2,7 @@ import './demo.scss'
 
 import Vue from 'vue'
 import components, { bus, events } from '../'
-import insertSql from './insert-sql'
+import insertSql from './insert-sql.vue'
 
 let event = events.changeDegree.withID('demo-degree-5')
 bus.$on(event, function (data) {
