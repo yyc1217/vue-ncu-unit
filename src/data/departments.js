@@ -1130,7 +1130,7 @@ module.exports = [
   }, {
     'id': 60011,
     'group_id': 1,
-    'chinese_name': '大氣科學學系(大氣組)',
+    'chinese_name': '大氣科學學系大氣組',
     'english_name': 'Atmospheric Science Program , Department of Atmospheric Scie',
     'study_system_no': 1,
     'parent_id': 6001,
@@ -1138,7 +1138,7 @@ module.exports = [
   }, {
     'id': 60012,
     'group_id': 2,
-    'chinese_name': '大氣科學學系(太空組)',
+    'chinese_name': '大氣科學學系太空組',
     'english_name': 'Space Science Program , Department of Atmospheric Sciences',
     'study_system_no': 1,
     'parent_id': 6001,
