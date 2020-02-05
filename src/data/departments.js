@@ -488,6 +488,14 @@ module.exports = [
     'parent_id': 3209,
     'college_id': '工學院'
   }, {
+    'id': 32100,
+    'group_id': 0,
+    'chinese_name': '國際永續發展碩士學位學程',
+    'english_name': 'International Master\'s Program in Environmental Sustainable Development',
+    'study_system_no': 2,
+    'parent_id': 3210,
+    'college_id': '工學院'
+  }, {
     'id': 32120,
     'group_id': 0,
     'chinese_name': '應用材料科學國際研究生碩士學位學程',
@@ -639,7 +647,7 @@ module.exports = [
     'study_system_no': 4,
     'parent_id': 3209,
     'college_id': '工學院'
-  }, {
+  },  {
     'id': 39010,
     'group_id': 0,
     'chinese_name': '化學工程與材料工程學系積體電路載板產業研發碩士專班',
@@ -976,6 +984,14 @@ module.exports = [
     'parent_id': 5003,
     'college_id': '資訊電機學院'
   }, {
+    'id': 50040,
+    'group_id': 0,
+    'chinese_name': '資訊電機學院學士班',
+    'english_name': 'Interdisciplinary Program of Electrical Engineering and Computer Science',
+    'study_system_no': 1,
+    'parent_id': 5003,
+    'college_id': '資訊電機學院'
+  }, {
     'id': 52010,
     'group_id': 0,
     'chinese_name': '電機工程學系',
@@ -1014,6 +1030,14 @@ module.exports = [
     'english_name': 'Institute of Software Engineering',
     'study_system_no': 2,
     'parent_id': 5205,
+    'college_id': '資訊電機學院'
+  }, {
+    'id': 52060,
+    'group_id': 0,
+    'chinese_name': '資訊工程學系AI碩士班',
+    'english_name': 'Msc in Artificial Intelligence of Computer Science and Information Engineering',
+    'study_system_no': 2,
+    'parent_id': 5206,
     'college_id': '資訊電機學院'
   }, {
     'id': 53010,
@@ -1150,6 +1174,14 @@ module.exports = [
     'english_name': 'Department of Geophysics',
     'study_system_no': 1,
     'parent_id': 6002,
+    'college_id': '地球科學學院'
+  }, {
+    'id': 60050,
+    'group_id': 0,
+    'chinese_name': '地球科學學學院學士班',
+    'english_name': 'Interdisciplinary Program of Earth System Science, Department of Geophysics',
+    'study_system_no': 1,
+    'parent_id': 6005,
     'college_id': '地球科學學院'
   }, {
     'id': 62010,
